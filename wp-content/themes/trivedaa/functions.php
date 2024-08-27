@@ -81,7 +81,7 @@ function enqueue_scripts_function() {
 		wp_enqueue_style ( 'owlthememincss', get_stylesheet_directory_uri() . '/css/plugins/owl.theme.default.min.css' );
 		wp_enqueue_style ( 'themifyiconscss', get_stylesheet_directory_uri() . '/css/plugins/themify-icons.css' );
 		wp_enqueue_style ( 'slidercss', get_stylesheet_directory_uri() . '/css/plugins/vegas.slider.min.css' );
-		wp_enqueue_style ( 'youTubePopUpcss', get_stylesheet_directory_uri() . '/css/plugins/YouTubePopUp.css' );
+		// wp_enqueue_style ( 'youTubePopUpcss', get_stylesheet_directory_uri() . '/css/plugins/YouTubePopUp.css' );
 		wp_enqueue_style ( 'style', get_stylesheet_directory_uri() . '/css/style.css' );
 	}
 
@@ -130,7 +130,7 @@ function add_js_footer_function() {
 		wp_enqueue_script( 'popperjs', get_stylesheet_directory_uri() . '/js/popper.min.js' );
 		wp_enqueue_script( 'scrollItminjs', get_stylesheet_directory_uri() . '/js/scrollIt.min.js' );
 		wp_enqueue_script( 'vegassliderminjs', get_stylesheet_directory_uri() . '/js/vegas.slider.min.js' );
-		wp_enqueue_script( 'youTubePopUpjs', get_stylesheet_directory_uri() . '/js/YouTubePopUp.js' );
+		// wp_enqueue_script( 'youTubePopUpjs', get_stylesheet_directory_uri() . '/js/YouTubePopUp.js' );
 	}
 }
 

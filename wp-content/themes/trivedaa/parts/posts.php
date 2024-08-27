@@ -1,27 +1,28 @@
 <?php   
 	get_header();
 	get_template_part('parts/page-title');
+	
+// Get categories of the custom taxonomy 'ourmediatype'
+$categories = get_terms(array(
+    'taxonomy' => 'category',
+    'orderby' => 'name',
+    // 'order' => 'DESC',
+    'hide_empty' => true,
+));
 ?>
 
 <!-- blog-classic -->
-<div class="sidebar-page-container">
-    <div class="auto-container"> 
-        <div class="row clearfix">
-            <div style="visibility: visible;" class="content-side col-lg-8 col-md-8 col-sm-12 col-xs-12 wow slideInLeft animated animated animated">
-                <?php 
-                    if ( have_posts() ) {
+<section class="bauen-blog3 section-padding2">
+    <div class="container">
+		<div class="row">
+		<div class="col-md-8">
+			<div class="row">
+        	<?php 
+            	if ( have_posts() ) {
 						while (have_posts()) : the_post(); ?>
-							<div style="visibility: visible;" class="news-style-two wow slideInLeft animated animated animated">
-								<div class="inner-box">
+							<div class="col-md-12">
+								<div class="item">
 									<div class="lower-content text-justify">
-										<div class="upper-box clearfix">
-											<div class="pull-left">
-												<div class="post-date">Posted: <span><?php echo get_the_date(); ?></span></div>
-											</div>
-										</div>
-										<h3>
-											<?php the_title(); ?>
-										</h3>
 										<div class="image" style="margin-bottom: 20px">
 											<?php
 												the_post_thumbnail('medium_large');
@@ -39,12 +40,23 @@
 											endwhile;
 										} else { ?>
 											<div class="page_contents_section about-section">
-												<div class="auto-container"><?php
+												<div class="post-cont"> 
+													<a href="#"><span class="tag"><?php
+														$post_categories = wp_get_post_terms(get_the_ID(), 'category');
+														if (!empty($post_categories)) {
+															$categories_list = array_map(function($term) {
+																return $term->name;
+															}, $post_categories);
+															echo implode(', ', $categories_list);
+														}
+														?> </span></a> <i>|</i> <span class="date"><?php echo get_the_date(); ?></span>
+													<h5><?php the_title();?></h5>
+													<p><?php
 													if( '' !== get_post()->post_content ) {
 														the_content();
 													} else {
 														echo "<h5 style='font-weight: bold'>No Contents Found.</h5>";
-													} ?>
+													} ?></p>
 												</div>
 											</div><?php
 										} ?>
@@ -57,47 +69,58 @@
 						<h4>No Posts Found.</h4><?php
 					}
 				?>
-            </div>
-            <div style="visibility: visible;" class="sidebar-side col-lg-4 col-md-4 col-sm-12 col-xs-12 wow slideInRight animated animated animated">
-                <aside class="sidebar">
-                    <div class="sidebar-widget popular-posts">
-                        <div class="sidebar-title">
-                            <h2 class="title">Recent Posts</h2>
+            	</div>
+			</div>
+            <div class="col-md-4">
+                <div class="blog-sidebar row">
+					<div class="col-md-12">
+                        <div class="widget">
+                            <div class="widget-title">
+                                <h6>Recent Posts</h6>
+                            </div>
+							<?php
+								$args = array(
+									'post_type' => 'post', 
+									'post_status' => 'publish',
+									'posts_per_page' => 20,
+									'nopaging' => false,
+									'order'    => 'DESC',
+									'orderby'  => 'date',
+									'paged' => $paged
+								);
+								$loop = new WP_Query( $args ); 
+								while ( $loop->have_posts() ) : $loop->the_post(); ?>
+									<div class="thum"> 
+										<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
+											<?php the_post_thumbnail('thumbnail'); ?>
+										</a>
+									</div>
+									<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<?php
+								endwhile;
+							?>
+                    	</div>           
+					</div>
+
+					<div class="col-md-12">
+                        <div class="widget">
+                            <div class="widget-title">
+                                <h6>Categories</h6>
+                            </div>
+                            <ul>
+								<?php 
+									foreach($categories as $category):
+								?>
+									<li data-filter="<?php echo $category->slug?>">
+										<a href="<?php echo esc_url(home_url('/'))?>/blog"><i class="ti-angle-right"></i><?php echo $category->name;?></a>
+									</li>
+                            	<?php endforeach; ?> 
+                            </ul>
                         </div>
-                        <?php
-                            $args = array(
-								'post_type' => 'post', 
-                                'post_status' => 'publish',
-                                'posts_per_page' => 20,
-                                'nopaging' => false,
-                                'order'    => 'DESC',
-                                'orderby'  => 'date',
-                                'paged' => $paged
-                            );
-                            $loop = new WP_Query( $args ); 
-                            while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                                <article class="post">
-                                    <figure class="post-thumb">
-                                        <a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
-                                            <?php
-                                                the_post_thumbnail('medium_large');
-                                            ?>
-                                        </a>
-                                    </figure>
-                                    <div class="text">
-                                        <a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
-                                            <?php the_title(); ?>
-                                        </a>
-                                    </div>
-                                    <div class="post-info">On: <?php echo get_the_date(); ?></div>
-                                </article><?php
-                            endwhile;
-                        ?>
-                    </div>           
-                </aside>
-            </div>
-        </div>
-    </div>
-</div>
+                    </div>
+            	</div>
+        	</div>
+    	</div>
+	</section>
 
 <?php get_footer(); ?>
