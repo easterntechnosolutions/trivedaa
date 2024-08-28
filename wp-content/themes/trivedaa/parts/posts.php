@@ -92,8 +92,8 @@ $categories = get_terms(array(
 								while ( $loop->have_posts() ) : $loop->the_post(); ?>
 									<div class="thum"> 
 										<?php the_post_thumbnail('thumbnail'); ?>
-										<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 									</div>
+									<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>" style="padding-left: 15px;"><?php the_title(); ?></a>
 								<?php
 								endwhile;
 							?>

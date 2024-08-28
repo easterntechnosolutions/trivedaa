@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="text-left">
-                        <p>© 2024 Bauen. All right reserved.</p>
+                        <p>© 2024 Trivedaa. All right reserved.</p>
                     </div>
                 </div>
                 <div class="col-md-4 abot">

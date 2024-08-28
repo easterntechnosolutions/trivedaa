@@ -71,7 +71,25 @@ ob_start(); ?>
 									<!-- End Body -->
 								</td>
 							</tr>
-							
+							<tr>
+								<td align="center" valign="top" style="width: 100%;">
+									<!-- Footer -->
+									<table border="0" cellpadding="10" cellspacing="0" width="700" id="template_footer" style="background-color: #000; width:100%; color: #FFF; min-width: 500px;">
+										<tr>
+											<td valign="top">
+												<table border="0" align="center" cellpadding="10" cellspacing="0" width="100%" style="text-align: center;">
+													<tr align="center">
+														<td valign="middle" id="credit" align="center" style="padding-bottom: 8px; display: block; text-align: center; ">
+															<a target="_blank" href="<?php echo site_url(); ?>" style="font-weight:400;text-decoration:blink;color:#fff;font-size: 20px; text-align: center; ">Trivedaa</a>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+									<!-- End Footer -->
+								</td>
+							</tr>
 						</table>
 					</td>
 				</tr>

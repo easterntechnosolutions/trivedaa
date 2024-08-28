@@ -41,7 +41,6 @@
 						'fallback_cb' => '__return_false',
 						'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 						'depth' => 3,
-						// 'walker' => new WP_Bootstrap_Navwalker(), // Custom walker class for Bootstrap support
 					));
 				?>
 			</div>

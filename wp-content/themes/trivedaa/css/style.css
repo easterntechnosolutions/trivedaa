@@ -147,6 +147,7 @@ input[type="password"],
 input[type="email"],
 input[type="text"],
 input[type="file"],
+input[type="tel"],
 textarea {
     max-width: 100%;
     margin-bottom: 10px;
@@ -618,7 +619,9 @@ blockquote cite:before {
     line-height: 1.2em;
     text-transform: uppercase;
 }
-.nav-scroll .logo-wrapper {}
+.header-logo{
+    width:134px;
+}
 .logo-wrapper {
     float: left;
 }
@@ -3652,7 +3655,7 @@ button.mfp-arrow {
     display: block;
     overflow: hidden;
 }
-.blog-sidebar .widget .recent .thum {
+.blog-sidebar .widget .thum {
     width: 90px;
     overflow: hidden;
     float: left;

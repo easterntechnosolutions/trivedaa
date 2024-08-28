@@ -77,27 +77,11 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="position-re o-hidden"> <img src="img/slider/2.jpg" alt=""> </div>
+                                <div class="position-re o-hidden"> <img src="<?php echo get_template_directory_uri();?>/img/slider/2.jpg" alt=""> </div>
                                 <div class="con"> <span class="category">
                                         <a href="blog.html">Interior</a> - 18.12.2024
                                     </span>
                                     <h5><a href="post.html">Modernism in Architecture</a></h5>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="position-re o-hidden"> <img src="img/slider/3.jpg" alt=""> </div>
-                                <div class="con"> <span class="category">
-                                        <a href="blog.html">Urban</a> - 16.12.2024
-                                    </span>
-                                    <h5><a href="post.html">Postmodern Architecture</a></h5>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="position-re o-hidden"> <img src="img/slider/4.jpg" alt=""> </div>
-                                <div class="con"> <span class="category">
-                                        <a href="blog.html">Planing</a> - 14.12.2024
-                                    </span>
-                                    <h5><a href="post.html">Modern Architecture Buildings</a></h5>
                                 </div>
                             </div>
                         </div>
