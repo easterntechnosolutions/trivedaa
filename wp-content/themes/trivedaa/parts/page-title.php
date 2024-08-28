@@ -84,7 +84,7 @@
 				echo "</h1>";
 			} ?>
 			<ul class="bread-crumb">
-				<?php //ah_breadcrumb(); ?>
+				<?php ah_breadcrumb(); ?>
 			</ul>
 		</div>
 	</div> -->

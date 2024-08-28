@@ -32,7 +32,7 @@ get_template_part('parts/page-title');?>
             </div>
             <div class="mb-30 animate-box" data-animate-effect="fadeInUp">
                 <p><b>Contact Details</b></p>
-                <p><b>Phone : </b><a href="tel:+91 98797 03800"> +91 98797 03800</a></p>
+                <p><b>Phone : </b><a href="tel:+919879703800"> +91 98797 03800</a></p>
                 <p><b>Email :</b> architecture@bauen.com</p>
                 <p><b>Address :</b> TRIVEDAA, 601 Icon Business Center, Nr. Valentine Cinema, Surat - Dumas Road, Rundh, Piplod, Surat, Gujarat 395007</p>
             </div>

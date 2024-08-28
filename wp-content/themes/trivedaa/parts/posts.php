@@ -7,7 +7,7 @@ $categories = get_terms(array(
     'taxonomy' => 'category',
     'orderby' => 'name',
     // 'order' => 'DESC',
-    'hide_empty' => true,
+    'hide_empty' => false,
 ));
 ?>
 
@@ -82,7 +82,7 @@ $categories = get_terms(array(
 								$args = array(
 									'post_type' => 'post', 
 									'post_status' => 'publish',
-									'posts_per_page' => 20,
+									'posts_per_page' => 4,
 									'nopaging' => false,
 									'order'    => 'DESC',
 									'orderby'  => 'date',
@@ -91,11 +91,9 @@ $categories = get_terms(array(
 								$loop = new WP_Query( $args ); 
 								while ( $loop->have_posts() ) : $loop->the_post(); ?>
 									<div class="thum"> 
-										<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
-											<?php the_post_thumbnail('thumbnail'); ?>
-										</a>
+										<?php the_post_thumbnail('thumbnail'); ?>
+										<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 									</div>
-									<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 								<?php
 								endwhile;
 							?>
@@ -109,12 +107,15 @@ $categories = get_terms(array(
                             </div>
                             <ul>
 								<?php 
-									foreach($categories as $category):
-								?>
-									<li data-filter="<?php echo $category->slug?>">
-										<a href="<?php echo esc_url(home_url('/'))?>/blog"><i class="ti-angle-right"></i><?php echo $category->name;?></a>
-									</li>
-                            	<?php endforeach; ?> 
+									if (!empty($categories) && !is_wp_error($categories)) {
+										foreach($categories as $category) {
+											echo '<li data-filter="' . esc_attr($category->slug) . '">';
+											echo '<a href="' . esc_url(get_category_link($category->term_id)) . '"><i class="ti-angle-right"></i>' . esc_html($category->name) . '</a>';
+											echo '</li>';
+										}
+									} else {
+										echo '<li>No categories found.</li>';
+									} ?> 
                             </ul>
                         </div>
                     </div>

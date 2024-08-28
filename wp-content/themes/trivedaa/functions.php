@@ -44,6 +44,7 @@ function init_function() {
 
 	// Uncomment when need Custom Post Type for a webiste.
 	// require_once 'post-types/custom-post-type.php';
+	require_once 'custom-email-template.php';
 
 }
 
@@ -117,20 +118,26 @@ function add_js_footer_function() {
 	if (!is_admin()) {
 		wp_enqueue_script( 'beforeafterjs', get_stylesheet_directory_uri() . '/js/before-after.js' );
 		wp_enqueue_script( 'bootstrap.minjs', get_stylesheet_directory_uri() . '/js/bootstrap.min.js' );
-		wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/js/custom.js' );
+		wp_enqueue_script( 'jqueryminjs', get_stylesheet_directory_uri() . '/js/jquery-3.6.3.min.js' );
 		wp_enqueue_script( 'imagesloadjs', get_stylesheet_directory_uri() . '/js/imagesloaded.pkgd.min.js' );
 		wp_enqueue_script( 'isotopejs', get_stylesheet_directory_uri() . '/js/jquery.isotope.v3.0.2.js' );
 		wp_enqueue_script( 'magnificpopupjs', get_stylesheet_directory_uri() . '/js/jquery.magnific-popup.js' );
 		wp_enqueue_script( 'jquerystellarminjs', get_stylesheet_directory_uri() . '/js/jquery.stellar.min.js' );
 		wp_enqueue_script( 'waypointsminjs', get_stylesheet_directory_uri() . '/js/jquery.waypoints.min.js' );
-		wp_enqueue_script( 'jqueryminjs', get_stylesheet_directory_uri() . '/js/jquery-3.6.3.min.js' );
 		wp_enqueue_script( 'jquerymigratejs', get_stylesheet_directory_uri() . '/js/jquery-migrate-3.0.0.min.js' );
 		wp_enqueue_script( 'modernnizrjs', get_stylesheet_directory_uri() . '/js/modernizr-2.6.2.min.js' );
 		wp_enqueue_script( 'owlcarouseljs', get_stylesheet_directory_uri() . '/js/owl.carousel.min.js' );
 		wp_enqueue_script( 'popperjs', get_stylesheet_directory_uri() . '/js/popper.min.js' );
 		wp_enqueue_script( 'scrollItminjs', get_stylesheet_directory_uri() . '/js/scrollIt.min.js' );
 		wp_enqueue_script( 'vegassliderminjs', get_stylesheet_directory_uri() . '/js/vegas.slider.min.js' );
-		// wp_enqueue_script( 'youTubePopUpjs', get_stylesheet_directory_uri() . '/js/YouTubePopUp.js' );
+		wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/js/custom.js' );
+		wp_enqueue_script( 'commoncaljs', get_stylesheet_directory_uri() . '/js/emicalculator/commoncalculator.js' );
+		wp_enqueue_script( 'coreminjs', get_stylesheet_directory_uri() . '/js/emicalculator/core.min.js' );
+		wp_enqueue_script( 'emicalculatorjs', get_stylesheet_directory_uri() . '/js/emicalculator/emicalculator.js' );
+		wp_enqueue_script( 'mainjs', get_stylesheet_directory_uri() . '/js/emicalculator/main.js' );
+		// wp_enqueue_script( 'mousejs', get_stylesheet_directory_uri() . '/js/emicalculator/mouse.min.js' );
+		// wp_enqueue_script( 'sliderjs', get_stylesheet_directory_uri() . '/js/emicalculator/slider.js' );
+		wp_enqueue_script( 'widgetjs', get_stylesheet_directory_uri() . '/js/emicalculator/widget.min.js' );
 	}
 }
 
@@ -522,4 +529,43 @@ function ah_breadcrumb() {
 	echo '</ul>';
   
 }
-  
+
+/* Contact Form 7 Shortcode enable in Body Tag. */
+add_filter( 'wpcf7_form_elements', 'do_shortcode' );
+
+add_filter( 'wpcf7_special_mail_tags', 'header_special_mail_tag', 10, 3 );
+function header_special_mail_tag( $output, $name, $html ) {
+	if ( 'email_template_header' == $name )
+		$output = do_shortcode( "[$name]" );
+	return $output;
+}
+
+// Email template footer
+add_filter( 'wpcf7_special_mail_tags', 'footer_special_mail_tag', 10, 3 );
+function footer_special_mail_tag( $output, $name, $html ) {
+	if ( 'email_template_footer' == $name )
+		$output = do_shortcode( "[$name]" );
+	return $output;
+}
+
+add_action('phpmailer_init', 'send_smtp_email');
+function send_smtp_email($phpmailer)
+{
+	$phpmailer->isSMTP();
+	$phpmailer->Host = 'smtp.gmail.com';
+	$phpmailer->Port = '587';
+	$phpmailer->SMTPSecure = 'tls';
+	$phpmailer->SMTPAuth = true;
+	$phpmailer->Username = 'noreply.trivedaa@gmail.com';
+	$phpmailer->Password = 'umeggsuyixprqhwg'; // gmail app_password:umeggsuyixprqhwg,  Emailpassword: trivedaa@2024#;
+	$phpmailer->From = 'noreply.trivedaa@gmail.com';
+	$phpmailer->FromName = 'Trivedaa';
+}
+
+
+
+function replace_submenu_class($menu) {
+    $menu = preg_replace('/class="sub-menu"/', 'class="dropdown-menu"', $menu);
+    return $menu;
+}
+add_filter('wp_nav_menu', 'replace_submenu_class');

@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
 	$(".preloader-bg").delay(600).fadeOut(700);
     
     var wind = $(window);
-    
+
     // ScrollIt
     $.scrollIt({
       upKey: 38,                // key code to navigate to the next section
@@ -158,7 +158,7 @@ jQuery(document).ready(function($) {
     });
     
     // YouTubePopUp
-    $("a.vid").YouTubePopUp();
+    // $("a.vid").YouTubePopUp();
     
     // Testimonials owlCarousel
     $('.testimonials .owl-carousel').owlCarousel({
@@ -316,39 +316,41 @@ jQuery(document).ready(function($) {
     
     //  Scroll back to top
     var progressPath = document.querySelector('.progress-wrap path');
-    var pathLength = progressPath.getTotalLength();
-    progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
-    progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-    progressPath.style.strokeDashoffset = pathLength;
-    progressPath.getBoundingClientRect();
-    progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
-    var updateProgress = function () {
-        var scroll = $(window).scrollTop();
-        var height = $(document).height() - $(window).height();
-        var progress = pathLength - (scroll * pathLength / height);
-        progressPath.style.strokeDashoffset = progress;
-    }
-    updateProgress();
-    $(window).scroll(updateProgress);
-    var offset = 150;
-    var duration = 550;
-    jQuery(window).on('scroll', function () {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery('.progress-wrap').addClass('active-progress');
-        } else {
-            jQuery('.progress-wrap').removeClass('active-progress');
+    // console.log(progressPath); 
+    if (progressPath) {
+        var pathLength = progressPath.getTotalLength();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+        progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+        progressPath.style.strokeDashoffset = pathLength;
+        progressPath.getBoundingClientRect();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+        var updateProgress = function () {
+            var scroll = $(window).scrollTop();
+            var height = $(document).height() - $(window).height();
+            var progress = pathLength - (scroll * pathLength / height);
+            progressPath.style.strokeDashoffset = progress;
         }
-    });
-    jQuery('.progress-wrap').on('click', function (event) {
-        event.preventDefault();
-        jQuery('html, body').animate({ scrollTop: 0 }, duration);
-        return false;
-    })
-    
+        updateProgress();
+        $(window).scroll(updateProgress);
+        var offset = 150;
+        var duration = 550;
+        jQuery(window).on('scroll', function () {
+            if (jQuery(this).scrollTop() > offset) {
+                jQuery('.progress-wrap').addClass('active-progress');
+            } else {
+                jQuery('.progress-wrap').removeClass('active-progress');
+            }
+        });
+        jQuery('.progress-wrap').on('click', function (event) {
+            event.preventDefault();
+            jQuery('html, body').animate({ scrollTop: 0 }, duration);
+            return false;
+        })
+    }  
 });
 
 // Slider 
-jQuery(document).ready(function() {
+jQuery(document).ready(function($) {
     var owl = $('.header .owl-carousel');
     // Slider owlCarousel
     $('.slider .owl-carousel').owlCarousel({
@@ -469,14 +471,15 @@ jQuery(document).ready(function($) {
   })();
 
 // Slider Grid Background owlCarousel *
-jQuery(document).ready(function($) {('.slider-grid-bg .owl-carousel').owlCarousel({
+jQuery(document).ready(function($) {
+    $('.slider-grid-bg .owl-carousel').owlCarousel({
         loop: true,
         margin: 30,
         mouseDrag: true,
         autoplay: false,
         dots: true,
         nav: false,
-        navText: ["<span class='lnr ti-angle-left'></span>","<span class='lnr ti-angle-right'></span>"],
+        navText: ["<span class='lnr ti-angle-left'></span>", "<span class='lnr ti-angle-right'></span>"],
         responsiveClass: true,
         responsive: {
             0: {
@@ -494,5 +497,4 @@ jQuery(document).ready(function($) {('.slider-grid-bg .owl-carousel').owlCarouse
             }
         }
     });
-    
 });
