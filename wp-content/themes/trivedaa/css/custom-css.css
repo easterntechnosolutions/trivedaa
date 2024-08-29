@@ -1,0 +1,175 @@
+.form-group span{
+    display: block;
+}
+
+/* Emi css */
+.emi-calculator-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.emi-calculator-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+.emi-calculator-form {
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+.progress-bar-container {
+    position: relative;
+    height: 20px;
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+.progress-bar {
+    height: 100%;
+    border-radius: 4px;
+    background-color: #007bff;
+    width: 0%;
+    transition: width 0.5s;
+}
+.emi-results h3 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+}
+.emi-chart-and-table {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.emi-charts {
+    flex: 1;
+    margin-right: 20px;
+}
+.emi-details-table-container {
+    flex: 1;
+    margin-left: 20px;
+}
+.emi-details-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.emi-details-table th, .emi-details-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 16px;
+    color: #555;
+}
+.emi-details-table th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+canvas {
+    max-width: 100%;
+    height: 250px; /* Set a fixed height */
+    margin-bottom: 20px;
+}
+.emi-schedule {
+    margin-top: 20px;
+}
+.emi-schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.emi-schedule-table th, .emi-schedule-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 16px;
+    color: #555;
+}
+.emi-schedule-table th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+.accordion {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion .accordion-item {
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+}
+
+.accordion .accordion-header {
+    background: #f1f1f1;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.accordion .accordion-content {
+    display: none;
+    padding: 10px;
+    background: #fff;
+}
+
+.accordion .accordion-content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.accordion .accordion-content th, .accordion .accordion-content td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.accordion .accordion-content th {
+    background: #f4f4f4;
+}
+
+.menu-item-with-image a {
+    background-repeat: no-repeat;
+    background-position: left center;
+    /* background-size: cover; */
+}
+
+.menu-item a img {
+    text-indent: 0;
+    /* display: block; */
+}

@@ -23,8 +23,9 @@
 				$attachment_image = get_field('logo', 'option'); 
 				$logo_array = wp_get_attachment_image_src( $attachment_image['ID'], $logo_full ); ?>
 			<!-- Logo -->
-			<div class="logo-wrapper header-logo"><a href="<?php echo esc_url(home_url('/'))?>">
-				<img src="<?php echo $logo_array[0]; ?>" alt="Trivedaa" title="Trivedaa"></a>
+			<div class="logo-wrapper header-logo">
+				<a href="<?php echo esc_url(home_url('/'))?>">
+				<img src="<?php echo $logo_array[0]; ?>" alt="Trivedaa" title="Trivedaa" class="logo-img"></a>
 			</div>
 
 			<!-- Button -->

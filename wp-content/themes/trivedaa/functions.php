@@ -43,7 +43,7 @@ function init_function() {
 	add_filter('script_loader_src', 'remove_wp_ver_css_js', 9999);
 
 	// Uncomment when need Custom Post Type for a webiste.
-	// require_once 'post-types/custom-post-type.php';
+	require_once 'post-types/custom-post-type.php';
 	require_once 'custom-email-template.php';
 
 }
@@ -73,7 +73,6 @@ function enqueue_scripts_function() {
 	// Add CSS/JS only in Front-end.
 	if (!is_admin()) {
 		wp_enqueue_script('jquery');
-		// wp_enqueue_style ( 'pluginscss', get_stylesheet_directory_uri() . '/css/plugins.css' );
 		wp_enqueue_style ( 'animatecss', get_stylesheet_directory_uri() . '/css/plugins/animate.min.css' );
 		wp_enqueue_style ( 'beforeaftercss', get_stylesheet_directory_uri() . '/css/plugins/before-after.css' );
 		wp_enqueue_style ( 'bootstrapmincss', get_stylesheet_directory_uri() . '/css/plugins/bootstrap.min.css' );
@@ -84,6 +83,7 @@ function enqueue_scripts_function() {
 		wp_enqueue_style ( 'slidercss', get_stylesheet_directory_uri() . '/css/plugins/vegas.slider.min.css' );
 		// wp_enqueue_style ( 'youTubePopUpcss', get_stylesheet_directory_uri() . '/css/plugins/YouTubePopUp.css' );
 		wp_enqueue_style ( 'style', get_stylesheet_directory_uri() . '/css/style.css' );
+		wp_enqueue_style ( 'customcss', get_stylesheet_directory_uri() . '/css/custom-css.css' );
 	}
 
     // This also removes some inline CSS variables for colors since 5.9 - global-styles-inline-css
@@ -116,28 +116,24 @@ add_action( 'wp_footer', 'add_js_footer_function' );
 function add_js_footer_function() {
 	// Load CSS/JS only on Frontend.
 	if (!is_admin()) {
-		wp_enqueue_script( 'beforeafterjs', get_stylesheet_directory_uri() . '/js/before-after.js' );
-		wp_enqueue_script( 'bootstrap.minjs', get_stylesheet_directory_uri() . '/js/bootstrap.min.js' );
 		wp_enqueue_script( 'jqueryminjs', get_stylesheet_directory_uri() . '/js/jquery-3.6.3.min.js' );
+		wp_enqueue_script( 'jquerymigratejs', get_stylesheet_directory_uri() . '/js/jquery-migrate-3.0.0.min.js' );
+		wp_enqueue_script( 'modernnizrjs', get_stylesheet_directory_uri() . '/js/emicalculator/modernizr.js' );
 		wp_enqueue_script( 'imagesloadjs', get_stylesheet_directory_uri() . '/js/imagesloaded.pkgd.min.js' );
 		wp_enqueue_script( 'isotopejs', get_stylesheet_directory_uri() . '/js/jquery.isotope.v3.0.2.js' );
-		wp_enqueue_script( 'magnificpopupjs', get_stylesheet_directory_uri() . '/js/jquery.magnific-popup.js' );
-		wp_enqueue_script( 'jquerystellarminjs', get_stylesheet_directory_uri() . '/js/jquery.stellar.min.js' );
-		wp_enqueue_script( 'waypointsminjs', get_stylesheet_directory_uri() . '/js/jquery.waypoints.min.js' );
-		wp_enqueue_script( 'jquerymigratejs', get_stylesheet_directory_uri() . '/js/jquery-migrate-3.0.0.min.js' );
-		wp_enqueue_script( 'modernnizrjs', get_stylesheet_directory_uri() . '/js/modernizr-2.6.2.min.js' );
-		wp_enqueue_script( 'owlcarouseljs', get_stylesheet_directory_uri() . '/js/owl.carousel.min.js' );
 		wp_enqueue_script( 'popperjs', get_stylesheet_directory_uri() . '/js/popper.min.js' );
+		wp_enqueue_script( 'bootstrapminjs', get_stylesheet_directory_uri() . '/js/bootstrap.min.js' );
 		wp_enqueue_script( 'scrollItminjs', get_stylesheet_directory_uri() . '/js/scrollIt.min.js' );
+		wp_enqueue_script( 'waypointsminjs', get_stylesheet_directory_uri() . '/js/jquery.waypoints.min.js' );
+		wp_enqueue_script( 'owlcarouseljs', get_stylesheet_directory_uri() . '/js/owl.carousel.min.js' );
+		wp_enqueue_script( 'jquerystellarminjs', get_stylesheet_directory_uri() . '/js/jquery.stellar.min.js' );
+		wp_enqueue_script( 'magnificpopupjs', get_stylesheet_directory_uri() . '/js/jquery.magnific-popup.js' );
+		wp_enqueue_script( 'youtubepopupjs', get_stylesheet_directory_uri() . '/js/YouTubePopUp.js' );
+		wp_enqueue_script( 'beforeafterjs', get_stylesheet_directory_uri() . '/js/before-after.js' );
 		wp_enqueue_script( 'vegassliderminjs', get_stylesheet_directory_uri() . '/js/vegas.slider.min.js' );
 		wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/js/custom.js' );
-		wp_enqueue_script( 'commoncaljs', get_stylesheet_directory_uri() . '/js/emicalculator/commoncalculator.js' );
-		wp_enqueue_script( 'coreminjs', get_stylesheet_directory_uri() . '/js/emicalculator/core.min.js' );
-		wp_enqueue_script( 'emicalculatorjs', get_stylesheet_directory_uri() . '/js/emicalculator/emicalculator.js' );
-		wp_enqueue_script( 'mainjs', get_stylesheet_directory_uri() . '/js/emicalculator/main.js' );
-		// wp_enqueue_script( 'mousejs', get_stylesheet_directory_uri() . '/js/emicalculator/mouse.min.js' );
-		// wp_enqueue_script( 'sliderjs', get_stylesheet_directory_uri() . '/js/emicalculator/slider.js' );
-		wp_enqueue_script( 'widgetjs', get_stylesheet_directory_uri() . '/js/emicalculator/widget.min.js' );
+		wp_enqueue_script( 'chartjs', 'https://cdn.jsdelivr.net/npm/chart.js' );
+		wp_enqueue_script( 'wowjs', get_stylesheet_directory_uri() . '/js/wow.min.js' );
 	}
 }
 

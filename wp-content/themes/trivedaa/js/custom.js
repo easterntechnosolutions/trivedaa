@@ -498,3 +498,302 @@ jQuery(document).ready(function($) {
         }
     });
 });
+
+//Emi Calculator js
+var pieChartInstance = null;
+var barChartInstance = null;
+
+function calculateEMI() {
+    var principal = parseFloat(document.getElementById('principal').value) || 0;
+    var rate = parseFloat(document.getElementById('rate').value) || 0;
+    var time = parseFloat(document.getElementById('time').value) || 0;
+    var startDate = new Date(document.getElementById('startDate').value);
+
+    if (!startDate.getTime()) {
+        startDate = new Date(); // Default to current date if invalid date
+    }
+
+    var monthlyRate = rate / (12 * 100);
+    var timeInMonths = time * 12;
+    var emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, timeInMonths)) / (Math.pow(1 + monthlyRate, timeInMonths) - 1);
+    var totalPayment = emi * timeInMonths;
+    var totalInterest = totalPayment - principal;
+
+    document.getElementById('emiMonthly').innerText = emi.toFixed(2);
+    document.getElementById('totalInterest').innerText = totalInterest.toFixed(2);
+    document.getElementById('totalPayment').innerText = totalPayment.toFixed(2);
+
+    // Update Progress Bars
+    document.getElementById('principalProgress').style.width = (principal / 10000000 * 100) + '%'; // Adjust max value as needed
+    document.getElementById('rateProgress').style.width = (rate / 20 * 100) + '%'; // Assuming 20% is the max interest rate
+    document.getElementById('timeProgress').style.width = (time / 30 * 100) + '%'; // Assuming 30 years is the max tenure
+
+    // Pie Chart
+    var ctxPie = document.getElementById('emiPieChart').getContext('2d');
+    if (pieChartInstance) {
+        pieChartInstance.destroy(); // Destroy existing pie chart
+    }
+    pieChartInstance = new Chart(ctxPie, {
+        type: 'pie',
+        data: {
+            labels: ['Principal Loan Amount', 'Total Interest'],
+            datasets: [{
+                data: [principal, totalInterest],
+                backgroundColor: ['#4caf50', '#f44336']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            var dataset = tooltipItem.dataset;
+                            var total = dataset.data.reduce((a, b) => a + b, 0);
+                            var currentValue = dataset.data[tooltipItem.dataIndex];
+                            var percentage = ((currentValue / total) * 100).toFixed(2) + '%';
+                            var label = dataset.labels[tooltipItem.dataIndex] || 'Undefined';
+                            return label + ': ₹' + currentValue.toFixed(2) + ' (' + percentage + ')';
+                        }
+                    }
+                },
+                datalabels: {
+                    formatter: function(value, context) {
+                        var total = context.chart._metasets[0].total;
+                        var percentage = (value / total * 100).toFixed(2) + '%';
+                        return percentage;
+                    },
+                    color: '#fff',
+                    font: {
+                        weight: 'bold'
+                    }
+                }
+            }
+        }
+    });
+
+    // Bar Chart
+    var years = [];
+    var principalPayments = [];
+    var interestPayments = [];
+    var remainingBalances = [];
+    var totalPayments = [];
+    var barCtx = document.getElementById('emiBarChart').getContext('2d');
+    if (barChartInstance) {
+        barChartInstance.destroy(); // Destroy existing bar chart
+    }
+    for (var i = 0; i < time; i++) {
+        years.push(new Date(startDate.getFullYear() + i, 0, 1).getFullYear());
+        principalPayments.push(0);
+        interestPayments.push(0);
+        remainingBalances.push(principal);
+        totalPayments.push(0);
+    }
+    var balance = principal;
+    var totalPrincipalPaid = 0;
+    var totalInterestPaid = 0;
+
+    for (var i = 0; i < timeInMonths; i++) {
+        var interestPayment = balance * monthlyRate;
+        var principalPayment = emi - interestPayment;
+        balance -= principalPayment;
+        var yearIndex = Math.floor(i / 12);
+        principalPayments[yearIndex] += principalPayment;
+        interestPayments[yearIndex] += interestPayment;
+        remainingBalances[yearIndex] = balance;
+        totalPayments[yearIndex] = principalPayments[yearIndex] + interestPayments[yearIndex];
+        totalPrincipalPaid += principalPayment;
+        totalInterestPaid += interestPayment;
+        if (balance < 0) {
+            break;
+        }
+    }
+
+    barChartInstance = new Chart(barCtx, {
+        type: 'bar',
+        data: {
+            labels: years,
+            datasets: [
+                {
+                    label: 'Principal Paid',
+                    data: principalPayments,
+                    backgroundColor: '#4caf50',
+                    stack: 'stack1'
+                },
+                {
+                    label: 'Interest Paid',
+                    data: interestPayments,
+                    backgroundColor: '#ff9800',
+                    stack: 'stack1'
+                },
+                {
+                    label: 'Remaining Balance',
+                    data: remainingBalances,
+                    type: 'line',
+                    tension: 0.1,
+                    borderWidth: 2,
+                    borderColor: '#2196f3',
+                    fill: false,
+                    stack: false
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItem) {
+                            return 'Year: ' + tooltipItem[0].label;
+                        },
+                        label: function(tooltipItem) {
+                            var datasetLabel = tooltipItem.dataset.label || '';
+                            var dataIndex = tooltipItem.dataIndex;
+                            var total = totalPayments[dataIndex];
+                            return datasetLabel + ': ₹ ' + tooltipItem.raw.toFixed(2) + '\nTotal Payment: ₹ ' + total.toFixed(2);
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    stacked: true,
+                    title: {
+                        display: true,
+                        text: 'Year'
+                    }
+                },
+                y: {
+                    stacked: true,
+                    title: {
+                        display: true,
+                        text: 'Amount (₹)'
+                    },
+                    ticks: {
+                        callback: function(value) {
+                            return '₹' + value.toFixed(2);
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // EMI Payment Schedule Accordion
+    var emiDate = new Date(startDate);
+    var scheduleHtml = '';
+    totalPrincipalPaid = 0;
+    totalInterestPaid = 0;
+    balance = principal;
+    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var yearlyTotals = {};
+
+    for (var i = 0; i < timeInMonths; i++) {
+        var interestPayment = balance * monthlyRate;
+        var principalPayment = emi - interestPayment;
+        balance -= principalPayment;
+        totalPrincipalPaid += principalPayment;
+        totalInterestPaid += interestPayment;
+        var month = monthNames[i % 12];
+        var year = new Date(startDate.getFullYear() + Math.floor(i / 12), 0, 1).getFullYear();
+        var totalPayment = principalPayment + interestPayment;
+        var loanPaidPercentage = ((totalPrincipalPaid / principal) * 100).toFixed(2);
+
+        if (!yearlyTotals[year]) {
+            yearlyTotals[year] = {
+                principal: 0,
+                interest: 0,
+                total: 0
+            };
+        }
+
+        yearlyTotals[year].principal += principalPayment;
+        yearlyTotals[year].interest += interestPayment;
+        yearlyTotals[year].total += totalPayment;
+
+        if (i % 12 === 0) {
+            if (scheduleHtml !== '') {
+                scheduleHtml += '</table></div></div>'; // Close previous year’s accordion item
+            }
+            scheduleHtml += '<div class="accordion-item"><div class="accordion-header"> ' + year + '</div><div class="accordion-content"><table><tr><th>Month</th><th>Principal (₹)</th><th>Interest (₹)</th><th>Total Payment (₹)</th><th>Balance (₹)</th><th>Loan Paid (%)</th></tr>';
+        }
+
+        scheduleHtml += '<tr><td>' + month + '</td><td>' + principalPayment.toFixed(2) + '</td><td>' + interestPayment.toFixed(2) + '</td><td>' + totalPayment.toFixed(2) + '</td><td>' + (balance < 0 ? 0 : balance.toFixed(2)) + '</td><td>' + loanPaidPercentage + '%</td></tr>';
+
+        if (balance < 0) {
+            break;
+        }
+    }
+    scheduleHtml += '</table></div></div>';
+
+    // Add year-wise totals
+    scheduleHtml += '<div class="accordion-item"><div class="accordion-header">Yearly Totals</div><div class="accordion-content"><table><tr><th>Year</th><th>Total Principal (₹)</th><th>Total Interest (₹)</th><th>Total Payment (₹)</th></tr>';
+    for (var year in yearlyTotals) {
+        scheduleHtml += '<tr><td>' + year + '</td><td>' + yearlyTotals[year].principal.toFixed(2) + '</td><td>' + yearlyTotals[year].interest.toFixed(2) + '</td><td>' + yearlyTotals[year].total.toFixed(2) + '</td></tr>';
+    }
+    scheduleHtml += '</table></div></div>'; // Close yearly totals accordion item
+
+    document.getElementById('scheduleAccordion').innerHTML = scheduleHtml;
+
+    // Accordion functionality
+    var accHeaders = document.getElementsByClassName("accordion-header");
+    for (var i = 0; i < accHeaders.length; i++) {
+        accHeaders[i].addEventListener("click", function() {
+            // Close all other accordion items
+            for (var j = 0; j < accHeaders.length; j++) {
+                if (accHeaders[j] !== this) {
+                    accHeaders[j].classList.remove("active");
+                    accHeaders[j].nextElementSibling.style.display = "none";
+                }
+            }
+
+            // Toggle the clicked accordion item
+            this.classList.toggle("active");
+            var accContent = this.nextElementSibling;
+            if (accContent.style.display === "block") {
+                accContent.style.display = "none";
+            } else {
+                accContent.style.display = "block";
+            }
+        });
+    }
+
+    // Open the first accordion section by default
+    if (accHeaders.length > 0) {
+        accHeaders[0].classList.add("active");
+        var firstAccContent = accHeaders[0].nextElementSibling;
+        if (firstAccContent) {
+            firstAccContent.style.display = "block";
+        }
+    }
+}
+
+// Initial calculation with default values
+document.addEventListener('DOMContentLoaded', function() {
+    calculateEMI();
+});
+
+
+jQuery(document).ready(function() {
+    jQuery('#kenburnsSliderContainer').vegas({
+        slides: [{
+            src: "wp-content/themes/trivedaa/img/slider/1.jpg"
+        }, {
+            src: "wp-content/themes/trivedaa/img/slider/2.jpg"
+        }, {
+            src: "wp-content/themes/trivedaa/img/slider/4.jpg"
+        }],
+        overlay: true,
+        transition: 'fade2',
+        animation: 'kenburnsUpRight',
+        transitionDuration: 1000,
+        delay: 10000,
+        animationDuration: 20000
+    });
+});

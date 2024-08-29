@@ -57,7 +57,9 @@
 
 
 /* ======= Google fonts (Oswald & Didact Gothic) ======= */
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&amp;family=Oswald:wght@200;300;400;500;600;700&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 
 
 /* ======= Basic style ======= */
@@ -78,16 +80,16 @@ body {
     word-wrap: break-word;
 }
 body {
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.75em;
     color: #999;
     overflow-x: hidden !important;
-    background: #272727;
+    background: #0C0C0C;
 }
 p {
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.75em;
@@ -100,7 +102,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     line-height: 1.25em;
     margin: 0 0 20px 0;
@@ -132,7 +134,7 @@ input,
 optgroup,
 select,
 textarea {
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
 }
 input[type="password"]:focus,
 input[type="email"]:focus,
@@ -161,7 +163,7 @@ textarea {
     display: block;
     width: 100%;
     line-height: 1.5em;
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     font-size: 16px;
     font-weight: 400;
     color: #999;
@@ -218,7 +220,7 @@ input[type="checkbox"] {
 /* submit and alert success  */
 input[type="submit"] {
     font-weight: 300;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     text-transform: uppercase;
     background: #b19777;
     color: #fff;
@@ -351,7 +353,7 @@ blockquote cite:before {
     font-weight: 600;
 }
 .count {
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
 }
 .valign {
     display: -webkit-box;
@@ -364,10 +366,8 @@ blockquote cite:before {
 .v-middle {
     position: absolute;
     width: 100%;
-    top: 50%;
-    left: 0;
-    -webkit-transform: translate(0%, -50%);
-    transform: translate(0%, -50%);
+    bottom: 0%;
+    left: 0;    
 }
 
 .v-bottom {
@@ -466,11 +466,21 @@ blockquote cite:before {
 
 .owl-carousel .owl-nav button.owl-next, 
 .owl-carousel .owl-nav button.owl-prev, 
-.owl-carousel button.owl-dot { outline: none;
+.owl-carousel button.owl-dot {outline: none;
 }
 
-
+.fot-icon img{
+    height: 50px;
+    margin-bottom: 14px;
+}
+.lines{
+    position: relative;
+    z-index: 0;
+}
 /* ======= Section style ======= */
+.section-padding.triveda {
+    padding: 120px 0;
+}
 .section-padding {
     padding: 90px 0;
 }
@@ -483,19 +493,22 @@ blockquote cite:before {
     font-size: 20px;
     margin-bottom: 20px;
 }
+.section-title.black-1{
+    color: #0c0c0c;
+}
 .section-title {
-    font-size: 40px;
-    font-family: 'Oswald', sans-serif;
+    font-size: 62px;
+     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     color: #fff;
     text-transform: uppercase;
     position: relative;
-    letter-spacing: 10px;
+    letter-spacing: 4px;
     word-spacing: 5px;
     margin-bottom: 30px;
 }
 .section-title span {
-    color: #b19777;
+    color: #2099EB;
 }
 .section-title2 {
     font-size: 35px;
@@ -507,8 +520,6 @@ blockquote cite:before {
     letter-spacing: 3px;
     text-transform: uppercase;
 }
-
-
 
 /* ======= Navbar style ======= */
 .navbar {
@@ -533,23 +544,22 @@ blockquote cite:before {
 .navbar .icon-bar {
     color: #FFF;
 }
-.navbar .navbar-nav .menu-item  {
-    font-size: 15px;
-    font-weight: 300;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+.navbar .navbar-nav .menu-item {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;    
     color: #fff;
     margin: 1px;
     -webkit-transition: all .4s;
     transition: all .4s;
     padding-right: 12px;
     padding-left: 12px;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Nunito";
 }
-.navbar .navbar-nav .menu-item .nav-color {
+.navbar .navbar-nav .menu-item.nav-color {
     color: #fff;
 }
-.navbar .navbar-nav .menu-item :hover {
+.navbar .navbar-nav .menu-item:hover {
     color: #b19777;
 }
 .navbar .navbar-nav .active {
@@ -579,7 +589,7 @@ blockquote cite:before {
 .nav-scroll .icon-bar {
     color: #b19777;
 }
-.nav-scroll .navbar-nav .nav-link {
+.nav-scroll .navbar-nav .menu-item {
     color: #fff;
 }
 .nav-scroll .navbar-nav .active {
@@ -596,7 +606,7 @@ blockquote cite:before {
     margin-bottom: 0px;
 }
 .nav-scroll .logo-wrapper .logo h2 {
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 35px;
     font-weight: 500;
     display: block;
@@ -609,7 +619,7 @@ blockquote cite:before {
 }
 .nav-scroll .logo-wrapper .logo span {
     display: block;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 12px;
     color: #b19777;
     font-weight: 400;
@@ -619,14 +629,12 @@ blockquote cite:before {
     line-height: 1.2em;
     text-transform: uppercase;
 }
-.header-logo{
-    width:134px;
-}
+.nav-scroll .logo-wrapper {}
 .logo-wrapper {
     float: left;
 }
 .logo-wrapper .logo h2 {
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 40px;
     font-weight: 500;
     display: block;
@@ -644,7 +652,7 @@ blockquote cite:before {
 }
 .logo-wrapper .logo span {
     display: block;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 12px;
     color: #b19777;
     font-weight: 400;
@@ -662,14 +670,14 @@ blockquote cite:before {
     width: 125px;
     text-align: center;
 }
-.dropdown .nav-link i {
+.dropdown .menu-item i {
     padding-left: 0px;
     font-size: 8px;
     color: rgba(255, 255, 255, 0.5);
 }
 .navbar .dropdown-menu .dropdown-item {
     padding: 6px 0;
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     font-size: 15px;
     font-weight: 400;
     color: #fff;
@@ -788,13 +796,13 @@ blockquote cite:before {
         max-width: 100%;
         padding: 0;
     }
-    .navbar .nav-link {
+    .navbar .menu-item {
         margin: 0px auto !important;
     }
-    .navbar .navbar-nav .menu-item  {
+    .navbar .navbar-nav .menu-item {
         color: #fff;
     }
-    .nav-scroll .navbar-collapse .nav-link {
+    .nav-scroll .navbar-collapse .menu-item {
         color: #fff !important;
     }
     .nav-scroll .navbar-collapse .active {
@@ -832,7 +840,7 @@ blockquote cite:before {
     .navbar .dropdown-menu li a {
         padding: 0 15px;
     }
-    .navbar .navbar-nav .menu-item  {
+    .navbar .navbar-nav .menu-item {
         padding-right: 0px;
         padding-left: 0px;
     }
@@ -861,7 +869,7 @@ blockquote cite:before {
     font-size: 30px;
 }
 .header .caption h4 {
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 20px;
     font-weight: 400;
     text-transform: uppercase;
@@ -875,15 +883,15 @@ blockquote cite:before {
 .header .caption h1 {
     position: relative;
     margin-bottom: 20px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 48px;
+     font-family: "Bebas Neue", sans-serif;
+    font-size: 80px;
     text-transform: uppercase;
     line-height: 1.35em;
     -webkit-animation-delay: .4s;
     animation-delay: .4s;
     color: #fff;
     font-weight: 400;
-    letter-spacing: 15px;
+    letter-spacing: 5px;
 }
 .header .caption p {
     font-size: 18px;
@@ -958,7 +966,7 @@ hr {
 .simple-content-text-inner h1 {
     position: relative;
     margin-bottom: 20px;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 48px;
     text-transform: uppercase;
     line-height: 1.35em;
@@ -1043,8 +1051,6 @@ hr {
     }
 }
 
-
-
 /* ======= Slider Grid Background ======= */
 .slider-grid-bg {
     min-height: 100vh;
@@ -1121,7 +1127,7 @@ hr {
     border: 1px solid #272727
 }
 .slider-grid-bg .year {
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 12px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -1132,7 +1138,7 @@ hr {
 }
 .slider-grid-bg .subtitle {
     display: block;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 12px;
     font-weight: 400;
     color: #fff;
@@ -1145,7 +1151,7 @@ hr {
 }
 .slider-grid-bg .title {
     display: block;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 24px;
     font-weight: 300;
     line-height: 1.2em;
@@ -1184,8 +1190,6 @@ hr {
     }
 }
 
-
-
 /* ===== Kenburns Slider style ===== */
 .kenburns-section {
   z-index: 1;
@@ -1217,11 +1221,11 @@ hr {
   z-index: 15;
 }
 .kenburns-inner .caption h4 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 12px;
+    font-family: "Nunito", sans-serif;
+    font-size: 14px;
     font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: 10px;
+    letter-spacing: 4px;
     color: #fff;
     text-align: center;
     margin-bottom: 20px;
@@ -1231,15 +1235,14 @@ hr {
 .kenburns-inner .caption h1 {
     position: relative;
     margin-bottom: 20px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 52px;
+     font-family: "Bebas Neue", sans-serif;
+    font-size: 80px;
     text-transform: uppercase;
-    line-height: 1.35em;
+    line-height: 1.2em;
     color: #fff;
     font-weight: 400;
     letter-spacing: 10px;
 }
-#kenburnsSliderContainer .vegas-overlay {}
 @media screen and (max-width: 767px) {
 .kenburns-inner .caption h4 {
     font-size: 12px;
@@ -1255,7 +1258,7 @@ hr {
 
 /* ======= Page Banner Header style ======= */
 .banner-header {
-    height: 50vh;
+    height: 60vh;
     z-index: -2;
 }
 .banner-header h6 {
@@ -1273,13 +1276,13 @@ hr {
 .banner-header h5 {
     color: #b19777;
     font-size: 17px;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     margin-bottom: 5px;
 }
 .banner-header h1 {
     font-size: 40px;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     color: #b19777;
     position: relative;
@@ -1326,8 +1329,8 @@ hr {
     right: 0;
     left: 0;
     content: "";
-    background: -webkit-linear-gradient(bottom, rgba(39, 39, 39, 1) 0%, rgba(39, 39, 39, .8) 100%, rgba(39, 39, 39, 0.5) 100%);
-    background: linear-gradient(to top, rgba(39, 39, 39, 1) 0%, rgba(39, 39, 39, 0.8) 100%, rgba(39, 39, 39, 0.5) 100%);
+    background: -webkit-linear-gradient(to top, rgba(12, 12, 12, 1) 0%, rgba(12, 12, 12, 0) 40%, rgba(12, 12, 12, 0) 60%);
+    background: linear-gradient(to top, rgba(12, 12, 12, 1) 0%, rgba(12, 12, 12, 0) 40%, rgba(12, 12, 12, 0) 60%);
     object-fit: cover;
 }
 
@@ -1400,7 +1403,7 @@ hr {
 .video-fullscreen-wrap .video-fullscreen-inner h1 {
     position: relative;
     margin-bottom: 20px;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 48px;
     text-transform: uppercase;
     line-height: 1.35em;
@@ -1446,29 +1449,25 @@ hr {
 .about {
     padding-bottom: 90px;
 }
-.about .about-img img:hover {
-    transform: scale(0.95);
-}
 .about .about-img {
     position: relative;
 }
 .about .about-img .img {
     padding: 0 15px 30px 30px;
-    position: relative;
+    position: relative;    
 }
 .about .about-img .img:before {
-    content: '';
+    content: none;
     position: absolute;
     top: 30px;
     left: 0;
     right: 45px;
     bottom: 0;
-    border: 1px solid #323232;
+    /* border: 1px solid #323232; */
 }
 .about .about-img .img img {
     position: relative;
-    z-index: 2;
-    background: #272727;
+    z-index: 2;    
 }
 .about-img-2 {
     position: relative
@@ -1483,7 +1482,7 @@ hr {
     padding: 20px 15px;
     color: #fff;
     text-transform: uppercase;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-weight: 300;
     letter-spacing: 5px;
     font-size: 13px;
@@ -1583,7 +1582,7 @@ hr {
     width: calc(48% - 1px)
 }
 .team-details .content .info-list .list-title {
-     font-family: 'Didact Gothic', sans-serif;
+       font-family: "Nunito", sans-serif;
     text-indent: 0;
     width: auto;
     display: inline;
@@ -1691,7 +1690,7 @@ hr {
     height: 100%
 }
 .position-title {
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 16px;
     font-weight: 300;
     letter-spacing: 3px;
@@ -1705,14 +1704,14 @@ hr {
     color: #FFF;
 }
 .position-title span {
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     color: #999;
     display: block;
     text-transform: none;
     letter-spacing: 0px;
 }
 .position-location {
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     font-size: 16px;
     -webkit-transition: color .3s;
     transition: color .3s;
@@ -1722,7 +1721,7 @@ hr {
     color: #FFF;
 }
 .position-location span {
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     color: #999;
     display: block;
     text-transform: none;
@@ -1735,7 +1734,7 @@ hr {
     color: #999;
 }
 .position-time span {
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     color: #fff;
     display: block;
     text-transform: none;
@@ -1834,7 +1833,7 @@ hr {
 .services .item .numb {
     font-size: 40px;
     font-weight: 600;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     position: absolute;
     bottom: 30px;
     right: 30px;
@@ -1940,7 +1939,7 @@ hr {
 }
 .services2 .services2-subtitle {
     color: #b19777;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 13px;
     font-weight: 300;
     letter-spacing: 5px;
@@ -2024,7 +2023,7 @@ hr {
     transition: transform .2s ease-in-out
 }
 .services3-heading {
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 16px;
     color: #fff;
     text-transform: uppercase;
@@ -2281,7 +2280,7 @@ hr {
 .sidebar-title h4 {
     position: relative;
     display: inline-block;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 20px;
     line-height: 1.1em;
     color: #fff;
@@ -2591,7 +2590,7 @@ hr {
     font-weight: 300;
     letter-spacing: 5px;
     text-transform: uppercase;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
 }
 @media only screen and (max-width: 991px) {
   .project-masonry-wrapper .project-masonry-item-content {
@@ -2641,7 +2640,7 @@ hr {
     font-size: 16px;
     cursor: pointer;
     color: #999;
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     font-weight: 400;
 }
 .bauen-project-filter li:last-child {
@@ -2674,7 +2673,7 @@ hr {
     transform: scale(0.95, 0.95);
 }
 .bauen-project-wrap h3 {
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 20px;
     line-height: 1.25em;
     font-weight: 300;
@@ -2685,7 +2684,7 @@ hr {
 }
 .bauen-project-wrap p {
     color: #b19777;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 13px;
     font-weight: 300;
     letter-spacing: 5px;
@@ -2828,7 +2827,7 @@ hr {
 }
 .projects4 .caption h6 {
     color: #b19777;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 13px;
     font-weight: 300;
     letter-spacing: 5px;
@@ -2874,7 +2873,7 @@ hr {
     font-size: 16px;
     cursor: pointer;
     color: #999;
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     font-weight: 400;
 }
 .bauen-gallery-filter li:last-child {
@@ -2954,7 +2953,7 @@ hr {
     font-weight: 300;
     letter-spacing: 5px;
     text-transform: uppercase;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
 }
 @media only screen and (max-width: 991px) {
   .gallery-masonry-wrapper .gallery-masonry-item-content {
@@ -3001,7 +3000,7 @@ hr {
 .project-page h6 {
     margin-bottom: 0px;
     position: relative;
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     font-size: 16px;
     color: #999;
 }
@@ -3016,7 +3015,7 @@ hr {
 .project-bar h5  {
     color: #b19777;
     font-size: 16px;
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     font-weight: 400;
     margin-bottom: 5px;
 }
@@ -3165,6 +3164,21 @@ button.mfp-arrow {
 
 /* ======= Promo Video and Testimonials style ======= */
 /* play button */
+.vid-area{
+    background-image: url(../img/video-img.png);
+    background-position: 68% 0%;
+    height: 540px;
+    width: 540px;
+    border-radius: 600px;    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
 .vid-area h5 {
     font-size: 20px;
     font-weight: 300;
@@ -3178,9 +3192,9 @@ button.mfp-arrow {
     width: 85px;
     height: 85px;
     margin: auto;
-    -webkit-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    transform: scale(1.3);
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
     z-index: 4;
     margin-left: 15px;
 }
@@ -3191,7 +3205,7 @@ button.mfp-arrow {
 }
 .circle-fill circle {
     opacity: 1;
-    fill: rgba(197, 164, 126, 0.5);
+    fill: rgba(0, 0, 0, 0.5);
 }
 .polygon {
     position: absolute;
@@ -3226,7 +3240,24 @@ button.mfp-arrow {
 .play-button.color .circle-fill circle {
     fill: #b19777;
 }
-
+.vd-tit{
+    display: flex;
+    align-items: center;
+}
+.video-section-home{
+    padding: 120px 0 50px 0;    
+}
+.video-section-title{    
+    position: relative;
+    margin-bottom: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 100px;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 10px;
+}
 /* video gallery */
 .video-gallery-button {
     position: relative;
@@ -3264,8 +3295,7 @@ button.mfp-arrow {
 .testimonials-box {
     position: relative;
     background: #272727;
-    padding: 60px 45px;
-    margin-bottom: -90px;
+    padding: 60px 45px;    
 }
 .testimonials-box .head-box h6 {
     font-weight: 400;
@@ -3327,7 +3357,7 @@ button.mfp-arrow {
     margin-bottom: 0px;
     padding-top: 7px;
     font-weight: 400;
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     color: #b19777;
 }
 .testimonials .item .info span {
@@ -3407,7 +3437,7 @@ button.mfp-arrow {
 .bauen-blog .item .con h5 a {
     color: #b19777;
     font-size: 25px;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-weight: 300;
     margin-bottom: 0px;
     letter-spacing: 1px;
@@ -3466,7 +3496,7 @@ button.mfp-arrow {
     color: #999;
     letter-spacing: 2px;
     font-size: 10px;
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     text-transform: uppercase;
     font-weight: 300;
 }
@@ -3509,7 +3539,7 @@ button.mfp-arrow {
     font-size: 11px;
     letter-spacing: 2px;
     color: #999;
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     text-transform: uppercase;
 }
 .bauen-blog2 .content .info .tags {
@@ -3584,7 +3614,7 @@ button.mfp-arrow {
 	font-size: 12px;
     letter-spacing: 2px;
     color: #b19777;
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     text-transform: uppercase;
 	margin-bottom: 5px;
 }
@@ -3655,7 +3685,7 @@ button.mfp-arrow {
     display: block;
     overflow: hidden;
 }
-.blog-sidebar .widget .thum {
+.blog-sidebar .widget .recent .thum {
     width: 90px;
     overflow: hidden;
     float: left;
@@ -3739,7 +3769,7 @@ button.mfp-arrow {
     color: #999;
     font-weight: 300;
     border: 1px solid #323232;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 13px;
     border-radius: 100%;
 }
@@ -3892,7 +3922,7 @@ hr.border-2 {
     position: relative;
     padding-bottom: 2px;
     margin-bottom: -2px;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 300;
@@ -3931,7 +3961,7 @@ hr.border-2 {
 .bauen-comment-section h3 {
     font-size: 16px;
     color: #b19777;
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     font-weight: 400;
 }
 .bauen-comment-section h3 span {
@@ -3983,7 +4013,7 @@ hr.border-2 {
 }
 .butn-dark a {
     font-weight: 300;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     text-transform: uppercase;
     background: #b19777;
     color: #fff;
@@ -4026,7 +4056,7 @@ hr.border-2 {
 }
 .butn-light a {
     font-weight: 300;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     text-transform: uppercase;
     background: transparent;
     color: #fff;
@@ -4066,9 +4096,17 @@ hr.border-2 {
 
 /* ======= Footer style ======= */
 .main-footer {
-    padding: 60px 0 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 4 !important;
+    position: relative;
+    padding: 60px 0 0px 0;    
     position: initial;
+    background-color: #272727;    
+    position: relative;
+    z-index: 1;    
+    background-position: bottom 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
 }
 .main-footer.dark {
     background: #272727;
@@ -4078,8 +4116,7 @@ hr.border-2 {
     color: #fff;
 }
 .main-footer .abot .social-icon {
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: right;    
 }
 .main-footer .abot .social-icon a {
     width: 40px;
@@ -4102,12 +4139,12 @@ hr.border-2 {
 }
 .main-footer .fothead h6 {
     margin-bottom: 0px;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     color: #b19777;
     font-size: 17px;
 }
 .main-footer .fotcont .fothead h6 {
-    font-family: 'Didact Gothic', sans-serif;
+      font-family: "Nunito", sans-serif;
     font-weight: 400;
     position: relative;
     padding-bottom: 5px;
@@ -4126,10 +4163,8 @@ hr.border-2 {
     position: relative;
 }
 /* sub footer */
-.main-footer .sub-footer {
-    padding: 30px 0 10px 0;
-    margin-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+.main-footer .fot-line {
+    padding: 20px 0;    
     position: relative;
 }
 .main-footer .sub-footer p {
@@ -4365,7 +4400,7 @@ hr.border-2 {
     padding-right: 60px;
     color: #999;
     transition: all 500ms ease;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
 }
 .accordion-box .block .acc-btn .count {
   color: #b19777;
@@ -4460,7 +4495,7 @@ hr.border-2 {
     margin: 0;
     font-size: 16px;
     text-transform: uppercase;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     color: #b19777;
     margin-bottom: 20px;
     letter-spacing: 5px;
@@ -4480,7 +4515,7 @@ hr.border-2 {
 }
 .butn-pricing a {
     font-weight: 300;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     text-transform: uppercase;
     background: #b19777;
     color: #fff;
@@ -4541,7 +4576,7 @@ hr.border-2 {
   padding: 20px 60px 20px 30px;
   height: 70px;
   display: block;
- font-family: 'Didact Gothic', sans-serif;
+   font-family: "Nunito", sans-serif;
   font-size: 16px;
   background: #323232;
   color: #999;
@@ -4639,7 +4674,7 @@ hr.border-2 {
     right: 20px;
 }
 .process .item h6 {
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     color: #fff;
     font-size: 16px;
     margin-bottom: 5px;
@@ -4709,7 +4744,7 @@ hr.border-2 {
     text-align: center;
     left: 22px;
     font-style: normal;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 14px;
     font-weight: 300;
     letter-spacing: 1px;
@@ -4719,7 +4754,7 @@ hr.border-2 {
     transition: all .3s ease-in-out;
 }
 .process2.item h3 {
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-size: 16px;
     font-weight: 300;
     color: #fff;
@@ -4817,7 +4852,7 @@ hr.border-2 {
 .comming h6 {
     color: #b19777;
     font-size: 13px;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 5px;
@@ -4827,7 +4862,7 @@ hr.border-2 {
 .comming h3 {
     font-size: 48px;
     line-height: 1.25em;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     color: #fff;
     position: relative;
@@ -4838,7 +4873,7 @@ hr.border-2 {
 .comming h2 {
     font-size: 48px;
     line-height: 1.25em;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     color: #fff;
     position: relative;
@@ -4899,7 +4934,7 @@ hr.border-2 {
 	color: #fff;
 	display: inline-block;
 	font-size: 13px;
-    font-family: 'Oswald', sans-serif;
+     font-family: "Bebas Neue", sans-serif;
     font-weight: 300;
     text-transform: uppercase;
 	letter-spacing: 5px;
@@ -4947,7 +4982,7 @@ hr.border-2 {
   background: #000;
 }
 [data-overlay-darkgray]:before {
-  background: #272727;
+  background: #0c0c0c;
 }
 [data-overlay-light]:before {
   background: #fff;
@@ -5006,7 +5041,7 @@ hr.border-2 {
 [data-overlay-dark="3"]:before,
 [data-overlay-darkgray="3"]:before,
 [data-overlay-light="3"]:before {
-  opacity: 0.3;
+  opacity: 0;
 }
 [data-overlay-dark="4"]:before,
 [data-overlay-darkgray="4"]:before,
@@ -5139,4 +5174,151 @@ hr.border-2 {
     .text-right {
         text-align: center;
     }
+}
+
+
+
+.kenburns-section {
+    position: relative
+}
+
+.kenburns-section .linear-gradient-container1 {
+    background-image: linear-gradient(180deg,#000,transparent 84%);
+    top: 0;
+    height: 20%
+}
+
+.linear-gradient-container,.linear-gradient-container1,.radial-gradient-container {
+    pointer-events: none;
+    height: 650px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+
+.kenburns-section .radial-gradient-container {
+    background-image: radial-gradient(ellipse at 0 50%,rgba(0,0,0,.7),transparent 95%);
+    height: 100%
+}
+
+.kenburns-section .linear-gradient-container2 {
+    height: 26vh;
+    bottom: 0px;
+    position: absolute;
+    background: linear-gradient(180deg,#0c0c0c,transparent 84%);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    left: 0;
+    width: 100%;
+    z-index: 2
+}
+
+
+
+.animatedLine {
+	position: fixed;
+	top: 0;
+	height: 100%;
+	width: 1px;
+	background: #202020;
+	overflow: hidden;
+}
+.animatedLine:nth-child(1) {
+	left: 20%;
+}
+.animatedLine:nth-child(2) {
+	left: 40%;
+}
+.animatedLine:nth-child(3) {
+	left: 60%;
+}
+.animatedLine:nth-child(4) {
+	left: 80%;
+}
+.animatedLine:nth-child(1)::after {
+	animation-delay: -4s;
+}
+.animatedLine:nth-child(2)::after {
+	animation-delay: -3s;
+}
+.animatedLine:nth-child(3)::after {
+	animation-delay: -2s;
+}
+.animatedLine:nth-child(4)::after {
+	animation-delay: -1s;
+}
+.animatedLine::after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 75px;
+	background: -moz-linear-gradient(top, rgba(32,153,235, 0) 0%, #2099EB 75%, #2099EB 100%);
+	background: -webkit-linear-gradient(top, rgba(32,153,235, 0) 0%, #2099EB 75%, #2099EB 100%);
+	background: linear-gradient(to bottom, rgba(32,153,235, 0) 0%, #2099EB 75%, #2099EB 100%);
+	animation: animatedLine 8s 0s infinite;
+	animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+	animation-fill-mode: forwards;
+}
+.fot-line{
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+@keyframes animatedLine {
+  0% {
+      top: -150px;
+  }
+  60% {
+      top: calc(100% + 150px);
+  }
+  100% {
+      top: calc(100% + 150px);
+  }
+}
+.fot-22{
+    position: relative;
+}
+.fot-1{
+    position: relative;
+    bottom: -1px;
+    z-index: 1;
+}
+.fot-2{
+    position: absolute;
+    bottom: 17px;
+    z-index: -1;
+}
+.fot-3 img{
+    z-index: -2;
+    position: relative;
+}
+.fot-3{
+    position: absolute;
+    bottom: 14px;    
+}
+.footer-logo{
+    margin-bottom: 80px;
+}
+.footer-logo img{
+    width: 400px;
+}
+
+
+.about-hero-image-wrapper {
+    grid-column-gap: 30px;
+    align-items: center;
+    display: flex;
+    z-index: 2;
+    position: relative;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.text-section{
+    position: relative;z-index: 1;
+}
+.text-section h1{
+    font-size: 90px;
 }
