@@ -55,72 +55,72 @@
             </div>
     </section>
 
- <!-- Projects -->
- <section class="rize-section">
-    <div class="text-end">
-        <img class="rize-project-img" src="<?php echo site_url();?>/wp-content/uploads/2024/08/home-project.webp">
-    </div>
-    <div class="container">                
-        <div class="row">
-            <div class="col-md-6">
-                <div class="project-section-1">
-                    <div class="logo-name-1">
-                        <img src="<?php echo site_url();?>/wp-content/uploads/2024/08/rize-name.svg">
-                    </div>
-                    <div class="project-section-title">
-                        Premium Showrooms and <br>Corporate Hub
-                    </div>
-                    <div>
-                        <p style="margin-top: 40px;">Step into a league of exclusivity with our one-of-a-kind commercial building. This iconic structure stands as a testament to innovation and uniqueness, setting your business apart in a league of its own.</p>
-                        <div>
-                            <div class="rize-details">
-                                <div class="t-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/premium.svg" alt="Premium">
-                                </div>
-                                <div class="t-1"> 
-                                    Premium Experience
-                                </div>
-                            </div>
-                            <div class="rize-details">
-                                <div class="t-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/structure.svg" alt="Structure">
-                                </div>
-                                <div class="t-1"> 
-                                    Beautiful Structure
-                                </div>
-                            </div>
-                            <div class="rize-details">
-                                <div class="t-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/deck.svg" alt="Deck">
-                                </div>
-                                <div class="t-1"> 
-                                    Extended Deck
-                                </div>
-                            </div>
+    <!-- Projects -->
+    <section class="rize-section">
+        <div class="text-end">
+            <img class="rize-project-img" src="<?php echo site_url();?>/wp-content/uploads/2024/08/home-project.webp">
+        </div>
+        <div class="container">                
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="project-section-1">
+                        <div class="logo-name-1">
+                            <img src="<?php echo site_url();?>/wp-content/uploads/2024/08/rize-name.svg">
                         </div>
-                        <div class="butn-dark mt-30">
-                        <?php
-                            $project_slug = 'cotton-house';
-                            $project = get_posts(array(
-                                'name'        => $project_slug,
-                                'post_type'   => 'projects',
-                                'post_status' => 'publish',
-                                'numberposts' => 1
-                            ));
-                            if ($project) {
-                                $project_url = get_permalink($project[0]->ID);
-                                echo '<a href="' . esc_url($project_url) . '"><span>Explore</span></a>';
-                            } else {
-                                echo '<span>Project not found</span>';
-                            }
-                            ?>
+                        <div class="project-section-title">
+                            Premium Showrooms and <br>Corporate Hub
+                        </div>
+                        <div>
+                            <p style="margin-top: 40px;">Step into a league of exclusivity with our one-of-a-kind commercial building. This iconic structure stands as a testament to innovation and uniqueness, setting your business apart in a league of its own.</p>
+                            <div>
+                                <div class="rize-details">
+                                    <div class="t-img">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/premium.svg" alt="Premium">
+                                    </div>
+                                    <div class="t-1"> 
+                                        Premium Experience
+                                    </div>
+                                </div>
+                                <div class="rize-details">
+                                    <div class="t-img">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/structure.svg" alt="Structure">
+                                    </div>
+                                    <div class="t-1"> 
+                                        Beautiful Structure
+                                    </div>
+                                </div>
+                                <div class="rize-details">
+                                    <div class="t-img">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/deck.svg" alt="Deck">
+                                    </div>
+                                    <div class="t-1"> 
+                                        Extended Deck
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="butn-dark mt-30">
+                            <?php
+                                $project_slug = 'rize';
+                                $project = get_posts(array(
+                                    'name'        => $project_slug,
+                                    'post_type'   => 'projects',
+                                    'post_status' => 'publish',
+                                    'numberposts' => 1
+                                ));
+                                if ($project) {
+                                    $project_url = get_permalink($project[0]->ID);
+                                    echo '<a href="' . esc_url($project_url) . '"><span>Explore</span></a>';
+                                } else {
+                                    echo '<span>Project not found</span>';
+                                }
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section class="testimonials">
         <div class="video-section-home">                

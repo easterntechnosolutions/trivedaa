@@ -71,7 +71,7 @@
                             <div class="social-icon">
                                 <a href="index.html"><i class="ti-facebook"></i></a>
                                 <a href="index.html"><i class="ti-twitter"></i></a>
-                                <a href="index.html"><i class="ti-instagram"></i></a>
+                                <a href="https://www.instagram.com/trivedaa_group"><i class="ti-instagram"></i></a>
                                 <a href="index.html"><i class="ti-pinterest"></i></a>
                             </div>
                         </div>                        
@@ -80,36 +80,4 @@
             </div>
         </footer>
 <?php wp_footer(); ?>
-
-<script>
-jQuery(document).ready(function() {
-    
-    // wow init
-    new WOW().init();
-
-    // PHP to JavaScript: Pass slider images
-    var sliderImages = [];
-
-    <?php
-    if( have_rows('slider') ):
-        while( have_rows('slider') ): the_row();
-            $image = get_sub_field('slider_image'); // Assuming 'image' is the sub field for each image
-            ?>
-            sliderImages.push({ src: "<?php echo esc_url($image['url']); ?>" });
-            <?php
-        endwhile;
-    endif;
-    ?>
-
-    jQuery('#trivedaaSlider').vegas({
-        slides: sliderImages,
-        overlay: true,
-        transition: 'fade2',
-        animation: 'kenburnsUpRight',
-        transitionDuration: 1000,
-        delay: 10000,
-        animationDuration: 20000
-    });
-});
-</script>
 </html>

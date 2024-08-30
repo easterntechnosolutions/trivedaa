@@ -134,6 +134,38 @@ function add_js_footer_function() {
 		wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/js/custom.js' );
 		wp_enqueue_script( 'chartjs', 'https://cdn.jsdelivr.net/npm/chart.js' );
 		wp_enqueue_script( 'wowjs', get_stylesheet_directory_uri() . '/js/wow.min.js' );
+	?>
+		<script>
+jQuery(document).ready(function() {
+    
+    // wow init
+    new WOW().init();
+
+    // PHP to JavaScript: Pass slider images
+    var sliderImages = [];
+
+    <?php
+    if( have_rows('slider') ):
+        while( have_rows('slider') ): the_row();
+            $image = get_sub_field('slider_image'); // Assuming 'image' is the sub field for each image
+            ?>
+            sliderImages.push({ src: "<?php echo esc_url($image['url']); ?>" });
+            <?php
+        endwhile;
+    endif;
+    ?>
+
+    jQuery('#trivedaaSlider').vegas({
+        slides: sliderImages,
+        overlay: true,
+        transition: 'fade2',
+        animation: 'kenburnsUpRight',
+        transitionDuration: 1000,
+        delay: 10000,
+        animationDuration: 20000
+    });
+});
+</script><?php
 	}
 }
 
