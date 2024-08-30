@@ -10,7 +10,7 @@
 ?>
 
 <!-- Page Title -->
-<section class="page-title banner-header banner-img valign bg-img bg-fixed" style='background-image:url("<?php echo $feaured_image; ?>")'>
+<section class="banner-header banner-img valign bg-img bg-fixed" data-overlay-darkgray="0" style='z-index: 2; background-image:url("<?php echo $feaured_image; ?>")'>
 	<!-- <div class="auto-container">
 		<div class="inner-box" id="inner-box"><?php
 			if ( is_front_page() && is_home() ) {

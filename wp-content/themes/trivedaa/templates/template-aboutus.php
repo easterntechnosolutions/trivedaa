@@ -4,181 +4,150 @@ Template Name: About Us
 */
 
 get_header();
-get_template_part('parts/page-title');
 ?>
-<section class="about section-padding2">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
-                <h2 class="section-title">About <span>Trivedaa</span></h2>
-                <p>Architecture viverra tristique justo duis vitae diam neque nivamus aestan ateuene artines aringianu
-                    atelit finibus viverra nec lacus. Nedana theme erodino setlie suscipe no curabit tristique.</p>
-                <p>Design inilla duiman at elit finibus viverra nec a lacus themo the drudea seneoice misuscipit non
-                    sagie the fermen.</p>
-                <p>Planner inilla duiman at elit finibus viverra nec a lacus themo the drudea seneoice misuscipit non
-                    sagie the fermen.</p>
-            </div>
-            <div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
-                <div class="about-img">
-                    <div class="img"><img src="http://localhost/trivedaa/wp-content/uploads/2024/08/about.jpg"
-                            alt="About Us" title="About us" class="alignnone size-full wp-image-39" /></div>
-                    <div class="about-img-2 about-buro">Canada Office</div>
+
+<div class="content-wrapper">
+    <!-- Lines -->
+    <section class="content-lines-wrapper">
+        <div class="lines">
+            <div class="animatedLine"></div>
+            <div class="animatedLine"></div>
+            <div class="animatedLine"></div>
+            <div class="animatedLine"></div>
+        </div>
+    </section>
+    <?php get_template_part('parts/page-title');?>
+    <section class="about section-padding">
+        <div class="container">
+            <div class="row text-center">
+                <h2 class="section-title wow animated fadeInUp" data-wow-delay="600ms">About <span>Us</span></h2>
+                <div class="wow animated fadeInUp" data-wow-delay="800ms" style="width:80%;margin-left:auto;margin-right:auto;">
+                    <p>Trivedaa Shaping Surat with Excellence. As a leading construction company, we bring visions to life through expert residential, commercial, and infrastructure projects. Our commitment to innovation and sustainability ensures each build is both stunning and functional. Partner with us to create exceptional spaces and a brighter future.</p>
+                       <p class="wow animated fadeInUp" data-wow-delay="1000ms" style="font-size: 32px;font-style: italic; font-family: 'Nunito', sans-serif;font-weight: 400;line-height: 1.5em;">Join us on our journey as we continue to shape the skyline of Surat and build a better future for all.</p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+        <div class="about-hero-image-wrapper">
+            <div class="wow animated fadeInUp" data-wow-delay="800ms">
+            <?php
+                $image_url = 'http://localhost/trivedaa/wp-content/uploads/2024/08/about-1.webp';
+                $image_id = attachment_url_to_postid($image_url);
+                if ($image_id) {
+                    $srcset = wp_get_attachment_image_srcset($image_id, 'Large');
+                    $sizes = wp_get_attachment_image_sizes($image_id, 'Large');
+                    $src = wp_get_attachment_image_src($image_id, 'Large')[0];
+                    ?>
+                    <img 
+                        src="<?php echo esc_url($src); ?>" 
+                        srcset="<?php echo esc_attr($srcset); ?>" 
+                        sizes="100vw" 
+                        alt="Trivedaa" loading="lazy"/>
+                    <?php
+                }
+            ?>
+            </div>
+            <div class="wow animated fadeInUp" data-wow-delay="1400ms">
+            <?php
+                $image_url = 'http://localhost/trivedaa/wp-content/uploads/2024/08/about-2.webp';
+                $image_id = attachment_url_to_postid($image_url);
+                if ($image_id) {
+                    $srcset = wp_get_attachment_image_srcset($image_id, 'Large');
+                    $sizes = wp_get_attachment_image_sizes($image_id, 'Large');
+                    $src = wp_get_attachment_image_src($image_id, 'Large')[0];
+                    ?>
+                    <img 
+                        src="<?php echo esc_url($src); ?>" 
+                        srcset="<?php echo esc_attr($srcset); ?>" 
+                        sizes="100vw" 
+                        alt="Trivedaa" loading="lazy"/>
+                    <?php
+                }
+            ?>
+            </div>
+            <div class="wow animated fadeInUp" data-wow-delay="1200ms">
+            <?php
+                $image_url = 'http://localhost/trivedaa/wp-content/uploads/2024/08/about-3.webp';
+                $image_id = attachment_url_to_postid($image_url);
+                if ($image_id) {
+                    $srcset = wp_get_attachment_image_srcset($image_id, 'Large');
+                    $sizes = wp_get_attachment_image_sizes($image_id, 'Large');
+                    $src = wp_get_attachment_image_src($image_id, 'Large')[0];
+                    ?>
+                    <img 
+                        src="<?php echo esc_url($src); ?>" 
+                        srcset="<?php echo esc_attr($srcset); ?>" 
+                        sizes="100vw" 
+                        alt="Trivedaa" loading="lazy"/>
+                    <?php
+                }
+            ?>
+            </div>
+            <div class="wow animated fadeInUp" data-wow-delay="800ms">
+            <?php
+                $image_url = 'http://localhost/trivedaa/wp-content/uploads/2024/08/about-4.webp';
+                $image_id = attachment_url_to_postid($image_url);
+                if ($image_id) {
+                    $srcset = wp_get_attachment_image_srcset($image_id, 'Large');
+                    $sizes = wp_get_attachment_image_sizes($image_id, 'Large');
+                    $src = wp_get_attachment_image_src($image_id, 'Large')[0];
+                    ?>
+                    <img 
+                        src="<?php echo esc_url($src); ?>" 
+                        srcset="<?php echo esc_attr($srcset); ?>" 
+                        sizes="100vw" 
+                        alt="Trivedaa" loading="lazy"/>
+                    <?php
+                }
+            ?>
+            </div>
+        </div>            
+    </section>
 
-<section class="testimonials">
-    <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/banner2.jpg" data-overlay-dark="3"
-        style="background-image: url(&quot;img/banner2.jpg&quot;);">
+    <section class="text-section">
+        <div class="container">
+            <div class="row text-center">
+                <h1 class="section-title wow animated fadeInUp" data-wow-delay="600ms">We believe in good ideas, flexibility & precision</h1>
+            </div>
+        </div>
+    </section>
+
+    <section style="position: relative;z-index: 1;">
         <div class="container">
             <div class="row">
-                <!-- Promo video -->
-                <div class="col-md-6">
-                    <div class="vid-area">
-                        <div class="vid-icon">
-                            <a class="play-button vid" href="https://youtu.be/RziCmLzpFNY">
-                                <svg class="circle-fill">
-                                    <circle cx="43" cy="43" r="39" stroke="#fff" stroke-width=".5"></circle>
-                                </svg>
-                                <svg class="circle-track">
-                                    <circle cx="43" cy="43" r="39" stroke="none" stroke-width="1" fill="none"></circle>
-                                </svg> <span class="polygon">
-                                    <i class="ti-control-play"></i>
-                                </span> </a>
-                        </div>
-                        <div class="cont mt-15 mb-30">
-                            <h5>View promo video</h5>
-                        </div>
+                <div class="col-md-6" style="margin-top:180px;">
+                    <h2 class="section-title wow animated fadeInUp" data-wow-delay="800ms">Our <span>Vision</span></h2>
+                    <div class="">
+                        <p style="font-size: 20px;">To become a leading force in the construction industry by delivering innovative, sustainable, and high-quality building solutions that enrich lives and contribute to the development of Surat and beyond.</p>
                     </div>
                 </div>
-                <!-- Testiominals -->
-                <div class="col-md-5 offset-md-1">
-                    <div class="testimonials-box animate-box fadeInUp animated" data-animate-effect="fadeInUp">
-                        <div class="head-box">
-                            <h4>What Client's Say?</h4>
-                        </div>
-                        <div class="owl-carousel owl-theme owl-loaded owl-drag">
-                            <div class="owl-stage-outer">
-                                <div class="owl-stage" style="transform: translate3d(-1942px, 0px, 0px); transition: 0.25s; width: 2720px;">
-                                    <div class="owl-item cloned" style="width: 358.5px; margin-right: 30px;">
-                                        <div class="item">
-                                            <span class="quote">
-                                                <img src="img/quot.png" alt="">
-                                            </span>
-                                            <p>Interior dapibus augue metus the nec feugiat erat hendrerit nec. Duis veante the lemon sanleo nec feugiat erat hendrerit necuis ve ante.</p>
-                                            <div class="info">
-                                                <div class="author-img"><img src="<?php echo get_template_directory_uri();?>/img/team/2.jpg" alt="emily"> </div>
-                                                <div class="cont">
-                                                    <h6>Emily White</h6><span>Armada Owner</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned" style="width: 358.5px; margin-right: 30px;">
-                                        <div class="item"> <span class="quote">
-                                                <img src="img/quot.png" alt="">
-                                            </span>
-                                            <p>Urban dapibus augue metus the nec feugiat erat hendrerit nec. Duis ve
-                                                ante the lemon sanleo nec feugiat erat hendrerit necuis ve ante.</p>
-                                            <div class="info">
-                                                <div class="author-img"> <img src="img/team/4.jpg" alt=""> </div>
-                                                <div class="cont">
-                                                    <h6>Jesica Smith</h6> <span>Alsa Manager</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item" style="width: 358.5px; margin-right: 30px;">
-                                        <div class="item"> <span class="quote"><img src="img/quot.png" alt=""></span>
-                                            <p>Architect dapibus augue metus the nec feugiat erat hendrerit nec. Duis ve
-                                                ante the lemon sanleo nec feugiat erat hendrerit necuis ve ante.</p>
-                                            <div class="info">
-                                                <div class="author-img"> <img src="img/team/1.jpg" alt=""> </div>
-                                                <div class="cont">
-                                                    <h6>Jason Brown</h6> <span>Crowne Plaza Owner</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item" style="width: 358.5px; margin-right: 30px;">
-                                        <div class="item"> <span class="quote">
-                                                <img src="img/quot.png" alt="">
-                                            </span>
-                                            <p>Urban dapibus augue metus the nec feugiat erat hendrerit nec. Duis veante the lemon sanleo nec feugiat erat hendrerit necuis ve ante.</p>
-                                            <div class="info">
-                                                <div class="author-img"><img src="img/team/4.jpg" alt=""> </div>
-                                                <div class="cont">
-                                                    <h6>Jesica Smith</h6> <span>Alsa Manager</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item" style="width: 358.5px; margin-right: 30px;">
-                                        <div class="item"><span class="quote"><img src="img/quot.png" alt=""></span>
-                                            <p>Architect dapibus augue metus the nec feugiat erat hendrerit nec. Duis ve
-                                                ante the lemon sanleo nec feugiat erat hendrerit necuis ve ante.</p>
-                                            <div class="info">
-                                                <div class="author-img"><img src="img/team/1.jpg" alt=""> </div>
-                                                <div class="cont">
-                                                    <h6>Jason Brown</h6> <span>Crowne Plaza Owner</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item" style="width: 358.5px; margin-right: 30px;">
-                                        <div class="item"> <span class="quote">
-                                                <img src="img/quot.png" alt="">
-                                            </span>
-                                            <p>Interior dapibus augue metus the nec feugiat erat hendrerit nec. Duis ve
-                                                ante the lemon sanleo nec feugiat erat hendrerit necuis ve ante.</p>
-                                            <div class="info">
-                                                <div class="author-img"><img src="img/team/2.jpg" alt=""> </div>
-                                                <div class="cont">
-                                                    <h6>Emily White</h6> <span>Armada Owner</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span class="lnr ti-angle-left"></span></button><button type="button" role="presentation" class="owl-next"><span class="lnr ti-angle-right"></span></button></div>
-                            <div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button></div>
-                        </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5" style="margin-top:120px;">
+                    <div class="about-img">
+                        <div class="img wow animated fadeInUp" data-wow-delay="800ms">
+                            <img src="<?php echo site_url();?>/wp-content/uploads/2024/08/our-vision.webp" class="img-fluid" alt="Our Vision" loading="lazy">
+                        </div>                            
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="clients">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-7">
-                        <div class="owl-carousel owl-theme owl-loaded owl-drag">
-                            <div class="clients-logo">
-                                <a href="#0"><img src="<?php echo site_url();?>/wp-content/uploads/2024/08/icon4.png" alt=""></a>
-                            </div>
-                            <div class="clients-logo">
-                                <a href="#0"><img src="<?php echo site_url();?>/wp-content/uploads/2024/08/icon1.png" alt=""></a>
-                            </div>
-                            <div class="clients-logo">
-                                <a href="#0"><img src="<?php echo site_url();?>/wp-content/uploads/2024/08/icon2.png" alt=""></a>
-                            </div>
-                            <div class="clients-logo">
-                                <a href="#0"><img src="<?php echo site_url();?>/wp-content/uploads/2024/08/icon3.png" alt=""></a>
-                            </div>
-                            <div class="clients-logo">
-                                <a href="#0"><img src="img/clients/5.png" alt=""></a>
-                            </div>
-                            <div class="clients-logo">
-                                <a href="#0"><img src="img/clients/6.png" alt=""></a>
-                            </div>
-                        </div>
+        <div class="container" style="margin-top:0px;margin-bottom: 100px;">
+            <div class="row">
+                <div class="col-md-5" style="margin-top:120px;">
+                    <div class="about-img">
+                        <div class="img wow animated fadeInUp" data-wow-delay="800ms">
+                            <img src="<?php echo site_url();?>/wp-content/uploads/2024/08/our-mission.webp" class="img-fluid" alt="Our Mission" loading="lazy">
+                        </div>                            
                     </div>
-				</div>
-			</div>
-		</section>
+                </div> 
+                <div class="col-md-1"></div>
+                <div class="col-md-6" style="margin-top:180px;">
+                    <h2 class="section-title wow animated fadeInUp" data-wow-delay="800ms">Our <span>Mission</span></h2>
+                    <div class="">
+                        <p style="font-size: 20px;">Our mission is to design and construct exceptional buildings that meet the highest standards of safety, quality, and sustainability. We are committed to enhancing the urban landscape of Surat by creating spaces that inspire and endure, while fostering a culture of integrity, collaboration, and continuous improvement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 <?php get_footer(); ?>

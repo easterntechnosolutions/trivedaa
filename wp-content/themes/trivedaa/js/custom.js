@@ -509,7 +509,7 @@ function calculateEMI() {
     var time = parseFloat(document.getElementById('time').value) || 0;
     var startDate = new Date(document.getElementById('startDate').value);
 
-    if (!startDate.getTime()) {
+    if (isNaN(startDate.getTime())) {
         startDate = new Date(); // Default to current date if invalid date
     }
 
@@ -539,7 +539,7 @@ function calculateEMI() {
             labels: ['Principal Loan Amount', 'Total Interest'],
             datasets: [{
                 data: [principal, totalInterest],
-                backgroundColor: ['#4caf50', '#f44336']
+                backgroundColor: ['#4caf50', '#ff9800']
             }]
         },
         options: {
@@ -558,17 +558,6 @@ function calculateEMI() {
                             var label = dataset.labels[tooltipItem.dataIndex] || 'Undefined';
                             return label + ': ₹' + currentValue.toFixed(2) + ' (' + percentage + ')';
                         }
-                    }
-                },
-                datalabels: {
-                    formatter: function(value, context) {
-                        var total = context.chart._metasets[0].total;
-                        var percentage = (value / total * 100).toFixed(2) + '%';
-                        return percentage;
-                    },
-                    color: '#fff',
-                    font: {
-                        weight: 'bold'
                     }
                 }
             }
@@ -721,7 +710,7 @@ function calculateEMI() {
             if (scheduleHtml !== '') {
                 scheduleHtml += '</table></div></div>'; // Close previous year’s accordion item
             }
-            scheduleHtml += '<div class="accordion-item"><div class="accordion-header"> ' + year + '</div><div class="accordion-content"><table><tr><th>Month</th><th>Principal (₹)</th><th>Interest (₹)</th><th>Total Payment (₹)</th><th>Balance (₹)</th><th>Loan Paid (%)</th></tr>';
+            scheduleHtml += '<div class="accordion-item"><div class="accordion-header">' + year + '</div><div class="accordion-content"><table><tr><th>Month</th><th>Principal (₹)</th><th>Interest (₹)</th><th>Total Payment (₹)</th><th>Balance (₹)</th><th>Loan Paid (%)</th></tr>';
         }
 
         scheduleHtml += '<tr><td>' + month + '</td><td>' + principalPayment.toFixed(2) + '</td><td>' + interestPayment.toFixed(2) + '</td><td>' + totalPayment.toFixed(2) + '</td><td>' + (balance < 0 ? 0 : balance.toFixed(2)) + '</td><td>' + loanPaidPercentage + '%</td></tr>';
@@ -778,7 +767,6 @@ function calculateEMI() {
 document.addEventListener('DOMContentLoaded', function() {
     calculateEMI();
 });
-
 
 jQuery(document).ready(function() {
     jQuery('#kenburnsSliderContainer').vegas({

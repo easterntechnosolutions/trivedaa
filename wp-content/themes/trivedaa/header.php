@@ -25,7 +25,8 @@
 			<!-- Logo -->
 			<div class="logo-wrapper header-logo">
 				<a href="<?php echo esc_url(home_url('/'))?>">
-				<img src="<?php echo $logo_array[0]; ?>" alt="Trivedaa" title="Trivedaa" class="logo-img"></a>
+					<img src="<?php echo $logo_array[0]; ?>" alt="Trivedaa" title="Trivedaa" class="logo-img">
+				</a>
 			</div>
 
 			<!-- Button -->
