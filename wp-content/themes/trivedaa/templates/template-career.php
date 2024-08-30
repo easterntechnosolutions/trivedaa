@@ -15,12 +15,12 @@ get_header();
 </style>
 <div class="content-wrapper">
     <section class="content-lines-wrapper">
-        <!-- <div class="lines">
+        <div class="lines">
             <div class="animatedLine"></div>
             <div class="animatedLine"></div>
             <div class="animatedLine"></div>
             <div class="animatedLine"></div>
-        </div> -->
+        </div>
     </section>
     <?php get_template_part('parts/page-title');?>
     <section class="section-padding">

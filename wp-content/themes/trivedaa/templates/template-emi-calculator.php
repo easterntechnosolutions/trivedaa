@@ -8,15 +8,7 @@ get_template_part('parts/page-title');?>
 
 <div class="content-wrapper">
     <!-- Lines -->
-    <section class="content-lines-wrapper">
-        <!-- <div class="lines">
-            <div class="animatedLine"></div>
-            <div class="animatedLine"></div>
-            <div class="animatedLine"></div>
-            <div class="animatedLine"></div>
-        </div> -->
-    </section>
-    <section class="about section-padding">
+    <section class="section-padding">
         <div class="container">
             <div class="row text-center">
                 <h2 class="section-title wow animated fadeInUp" data-wow-delay="600ms">EMI <span>Calculator</span></h2>

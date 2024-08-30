@@ -509,7 +509,7 @@ function calculateEMI() {
     var time = parseFloat(document.getElementById('time').value) || 0;
     var startDate = new Date(document.getElementById('startDate').value);
 
-    if (isNaN(startDate.getTime())) {
+    if (!startDate.getTime()) {
         startDate = new Date(); // Default to current date if invalid date
     }
 
@@ -524,9 +524,9 @@ function calculateEMI() {
     document.getElementById('totalPayment').innerText = totalPayment.toFixed(2);
 
     // Update Progress Bars
-    document.getElementById('principalProgress').style.width = (principal / 10000000 * 100) + '%'; // Adjust max value as needed
-    document.getElementById('rateProgress').style.width = (rate / 20 * 100) + '%'; // Assuming 20% is the max interest rate
-    document.getElementById('timeProgress').style.width = (time / 30 * 100) + '%'; // Assuming 30 years is the max tenure
+    document.getElementById('principalProgress').style.width = (principal / 10000000 * 100) + '%';
+    document.getElementById('rateProgress').style.width = (rate / 20 * 100) + '%';
+    document.getElementById('timeProgress').style.width = (time / 30 * 100) + '%';
 
     // Pie Chart
     var ctxPie = document.getElementById('emiPieChart').getContext('2d');
@@ -547,6 +547,9 @@ function calculateEMI() {
             plugins: {
                 legend: {
                     position: 'bottom',
+                    labels: {
+                        color: '#fff'
+                    }
                 },
                 tooltip: {
                     callbacks: {
@@ -555,9 +558,18 @@ function calculateEMI() {
                             var total = dataset.data.reduce((a, b) => a + b, 0);
                             var currentValue = dataset.data[tooltipItem.dataIndex];
                             var percentage = ((currentValue / total) * 100).toFixed(2) + '%';
-                            var label = dataset.labels[tooltipItem.dataIndex] || 'Undefined';
-                            return label + ': ₹' + currentValue.toFixed(2) + ' (' + percentage + ')';
                         }
+                    }
+                },
+                datalabels: {
+                    formatter: function(value, context) {
+                        var total = context.chart._metasets[0].total;
+                        var percentage = (value / total * 100).toFixed(2) + '%';
+                        return percentage;
+                    },
+                    color: '#fff',
+                    font: {
+                        weight: 'bold'
                     }
                 }
             }
@@ -635,6 +647,9 @@ function calculateEMI() {
             plugins: {
                 legend: {
                     position: 'bottom',
+                    labels: {
+                        color: '#fff'
+                    }
                 },
                 tooltip: {
                     callbacks: {
@@ -647,7 +662,10 @@ function calculateEMI() {
                             var total = totalPayments[dataIndex];
                             return datasetLabel + ': ₹ ' + tooltipItem.raw.toFixed(2) + '\nTotal Payment: ₹ ' + total.toFixed(2);
                         }
-                    }
+                    },
+                    backgroundColor: '#333',
+                    titleColor: '#fff',
+                    bodyColor: '#fff'
                 }
             },
             scales: {
@@ -655,22 +673,34 @@ function calculateEMI() {
                     stacked: true,
                     title: {
                         display: true,
-                        text: 'Year'
+                        text: 'Year',
+                        color: '#fff'
+                    },
+                    ticks: {
+                        color: '#fff'
+                    },
+                    grid:{
+                        color:'#444'
                     }
                 },
                 y: {
                     stacked: true,
                     title: {
                         display: true,
-                        text: 'Amount (₹)'
+                        text: 'Amount (₹)',
+                        color: '#fff'
                     },
                     ticks: {
+                        color:'#fff',
                         callback: function(value) {
                             return '₹' + value.toFixed(2);
                         }
-                    }
+                    },
+                    grid: {
+                        color: '#444',
+                    },
                 }
-            }
+            },
         }
     });
 
@@ -710,7 +740,7 @@ function calculateEMI() {
             if (scheduleHtml !== '') {
                 scheduleHtml += '</table></div></div>'; // Close previous year’s accordion item
             }
-            scheduleHtml += '<div class="accordion-item"><div class="accordion-header">' + year + '</div><div class="accordion-content"><table><tr><th>Month</th><th>Principal (₹)</th><th>Interest (₹)</th><th>Total Payment (₹)</th><th>Balance (₹)</th><th>Loan Paid (%)</th></tr>';
+            scheduleHtml += '<div class="accordion-item"><div class="accordion-header"> ' + year + '</div><div class="accordion-content"><table><tr><th>Month</th><th>Principal (₹)</th><th>Interest (₹)</th><th>Total Payment (₹)</th><th>Balance (₹)</th><th>Loan Paid (%)</th></tr>';
         }
 
         scheduleHtml += '<tr><td>' + month + '</td><td>' + principalPayment.toFixed(2) + '</td><td>' + interestPayment.toFixed(2) + '</td><td>' + totalPayment.toFixed(2) + '</td><td>' + (balance < 0 ? 0 : balance.toFixed(2)) + '</td><td>' + loanPaidPercentage + '%</td></tr>';
@@ -766,22 +796,4 @@ function calculateEMI() {
 // Initial calculation with default values
 document.addEventListener('DOMContentLoaded', function() {
     calculateEMI();
-});
-
-jQuery(document).ready(function() {
-    jQuery('#kenburnsSliderContainer').vegas({
-        slides: [{
-            src: "wp-content/themes/trivedaa/img/slider/1.jpg"
-        }, {
-            src: "wp-content/themes/trivedaa/img/slider/2.jpg"
-        }, {
-            src: "wp-content/themes/trivedaa/img/slider/4.jpg"
-        }],
-        overlay: true,
-        transition: 'fade2',
-        animation: 'kenburnsUpRight',
-        transitionDuration: 1000,
-        delay: 10000,
-        animationDuration: 20000
-    });
 });
