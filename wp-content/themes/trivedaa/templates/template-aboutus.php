@@ -30,7 +30,7 @@ get_header();
         <div class="about-hero-image-wrapper">
             <div class="wow animated fadeInUp" data-wow-delay="800ms">
             <?php
-                $image_url = 'http://localhost/trivedaa/wp-content/uploads/2024/08/about-1.webp';
+                $image_url = get_site_url() .'/wp-content/uploads/2024/08/about-1.webp';
                 $image_id = attachment_url_to_postid($image_url);
                 if ($image_id) {
                     $srcset = wp_get_attachment_image_srcset($image_id, 'Large');
@@ -48,7 +48,7 @@ get_header();
             </div>
             <div class="wow animated fadeInUp" data-wow-delay="1400ms">
             <?php
-                $image_url = 'http://localhost/trivedaa/wp-content/uploads/2024/08/about-2.webp';
+                $image_url = get_site_url() .'/wp-content/uploads/2024/08/about-2.webp';
                 $image_id = attachment_url_to_postid($image_url);
                 if ($image_id) {
                     $srcset = wp_get_attachment_image_srcset($image_id, 'Large');
@@ -66,7 +66,7 @@ get_header();
             </div>
             <div class="wow animated fadeInUp" data-wow-delay="1200ms">
             <?php
-                $image_url = 'http://localhost/trivedaa/wp-content/uploads/2024/08/about-3.webp';
+                $image_url = get_site_url() .'/wp-content/uploads/2024/08/about-3.webp';
                 $image_id = attachment_url_to_postid($image_url);
                 if ($image_id) {
                     $srcset = wp_get_attachment_image_srcset($image_id, 'Large');
@@ -84,7 +84,7 @@ get_header();
             </div>
             <div class="wow animated fadeInUp" data-wow-delay="800ms">
             <?php
-                $image_url = 'http://localhost/trivedaa/wp-content/uploads/2024/08/about-4.webp';
+                $image_url = get_site_url() .'/wp-content/uploads/2024/08/about-4.webp';
                 $image_id = attachment_url_to_postid($image_url);
                 if ($image_id) {
                     $srcset = wp_get_attachment_image_srcset($image_id, 'Large');

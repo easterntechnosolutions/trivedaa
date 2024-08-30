@@ -78,6 +78,7 @@ $categories = get_terms(array(
                             <div class="widget-title">
                                 <h6>Recent Posts</h6>
                             </div>
+							<ul class="recent">
 							<?php
 								$args = array(
 									'post_type' => 'post', 
@@ -90,13 +91,16 @@ $categories = get_terms(array(
 								);
 								$loop = new WP_Query( $args ); 
 								while ( $loop->have_posts() ) : $loop->the_post(); ?>
+								<li>
 									<div class="thum"> 
 										<?php the_post_thumbnail('thumbnail'); ?>
 									</div>
 									<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>" style="padding-left: 15px;"><?php the_title(); ?></a>
+								</li>
 								<?php
 								endwhile;
 							?>
+							</ul>
                     	</div>           
 					</div>
 
