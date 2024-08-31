@@ -34,18 +34,17 @@ get_header();
                         <?php  echo do_shortcode('[contact-form-7 id="bb86e30" title="Contact form 1"]');?>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 get-in-touch">
                     <div style="background-color:#323232;padding:30px;">
-                    <div class="mb-30 animate-box" data-animate-effect="fadeInUp">
-                        <p><b>Bauen Architecture Firm</b></p>
-                        <p>Our firm nisl sodales sit amet sapien idea placerat sodales orcite. Vivamus ne miss rhoncus felis bauen architecture.</p>
-                    </div>
-                    <div class="mb-30 animate-box" data-animate-effect="fadeInUp">
-                        <p><b>Contact Details</b></p>
-                        <p><b>Phone : </b><a href="tel:<?php the_field('contact_number','option'); ?>"><?php the_field('contact_number','option'); ?></a></p>
-                        <p><b>Email : </b> <a href="mailto:<?php the_field('email_id','option'); ?>"><?php the_field('email_id','option'); ?></a></p>
-                        <p><b>Address : </b><?php the_field('address','option'); ?></p>
-                    </div>
+                        <div class="mb-30 animate-box" data-animate-effect="fadeInUp">
+                            <h2><b>Get In Touch</b></h2>
+                        </div>
+                        <div class="mb-30 animate-box" data-animate-effect="fadeInUp">
+                            <!-- <p><b>Contact Details</b></p> -->
+                            <p><b>Phone : </b><a href="tel:<?php the_field('contact_number','option'); ?>"><?php the_field('contact_number','option'); ?></a></p>
+                            <p><b>Email : </b> <a href="mailto:<?php the_field('email_id','option'); ?>"><?php the_field('email_id','option'); ?></a></p>
+                            <p><b>Address : </b><?php the_field('address','option'); ?></p>
+                        </div>
                     </div>
                 </div>
             </div>

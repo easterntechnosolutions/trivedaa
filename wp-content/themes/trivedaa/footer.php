@@ -64,7 +64,7 @@
                     <div class="row fot-line">
                         <div class="col-md-8">
                             <div class="text-left">
-                                <p>© 2024 Trivedaa. All right reserved | Powered By : <a href="https://www.easternts.com/">Eastern Techno Solutions(I) Pvt. Ltd.</a></p>
+                                <p>Copyright © 2024 Trivedaa. All right reserved | Powered By : <a href="https://www.easternts.com/">Eastern Techno Solutions(I) Pvt. Ltd.</a></p>
                             </div>
                         </div>
                         <div class="col-md-4 abot">

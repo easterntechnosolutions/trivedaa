@@ -40,7 +40,7 @@ get_template_part('parts/page-title');
                             <!-- <h6>Interior</h6> -->
                             <h5><a href="<?php echo the_permalink();?>"><?php the_title();?></a></h5>
                             <div class="line"></div>
-                            <a href="cotton-house.html"><i class="ti-arrow-right"></i></a>
+                            <a href="<?php echo the_permalink();?>"><i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
