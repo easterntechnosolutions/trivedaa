@@ -60,7 +60,16 @@ jQuery(document).ready(function($) {
             navbar.removeClass("nav-scroll");
             logo.attr('src', 'img/logo.png');
         }
+		 var bodyScroll = wind.scrollTop(),
+            navbarbottom = $(".navbar-bottom"),
+            logo = $(".navbar-bottom .logo> img");
+        if (bodyScroll > 800) {
+            navbarbottom.addClass("nav-scroll-bottom");
+        } else {
+            navbarbottom.removeClass("nav-scroll-bottom");
+        }
     });
+    
     // close navbar-collapse when a  clicked
     $(".navbar-nav .dropdown-item a").on('click', function () {
         $(".navbar-collapse").removeClass("show");

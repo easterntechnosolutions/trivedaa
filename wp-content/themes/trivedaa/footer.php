@@ -69,15 +69,20 @@
                         </div>
                         <div class="col-md-4 abot">
                             <div class="social-icon">
-                                <a href="index.html"><i class="ti-facebook"></i></a>
-                                <a href="index.html"><i class="ti-twitter"></i></a>
+                                <a href="#"><i class="ti-facebook"></i></a>
+                                <a href="#"><i class="ti-twitter"></i></a>
                                 <a href="https://www.instagram.com/trivedaa_group"><i class="ti-instagram"></i></a>
-                                <a href="index.html"><i class="ti-pinterest"></i></a>
+                                <a href="#"><i class="ti-pinterest"></i></a>
                             </div>
                         </div>                        
                     </div>
                 </div>
             </div>
         </footer>
+        <div class="progress-wrap cursor-pointer">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </div>
 <?php wp_footer(); ?>
 </html>
