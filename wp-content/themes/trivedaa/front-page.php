@@ -135,7 +135,7 @@
                     <div class="col-md-6">
                         <div class="vid-area">
                             <div class="vid-icon">
-                                <a class="play-button vid" href="https://youtu.be/RziCmLzpFNY">
+                                <a class="play-button vid" href="#">
                                     <svg class="circle-fill">
                                         <circle cx="43" cy="43" r="39" stroke="#fff" stroke-width=".5"></circle>
                                     </svg>

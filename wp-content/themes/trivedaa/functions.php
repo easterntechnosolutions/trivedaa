@@ -128,7 +128,7 @@ function add_js_footer_function() {
 		wp_enqueue_script( 'owlcarouseljs', get_stylesheet_directory_uri() . '/js/owl.carousel.min.js' );
 		wp_enqueue_script( 'jquerystellarminjs', get_stylesheet_directory_uri() . '/js/jquery.stellar.min.js' );
 		wp_enqueue_script( 'magnificpopupjs', get_stylesheet_directory_uri() . '/js/jquery.magnific-popup.js' );
-		wp_enqueue_script( 'youtubepopupjs', get_stylesheet_directory_uri() . '/js/YouTubePopUp.js' );
+		// wp_enqueue_script( 'youtubepopupjs', get_stylesheet_directory_uri() . '/js/YouTubePopUp.js' );
 		wp_enqueue_script( 'beforeafterjs', get_stylesheet_directory_uri() . '/js/before-after.js' );
 		wp_enqueue_script( 'vegassliderminjs', get_stylesheet_directory_uri() . '/js/vegas.slider.min.js' );
 		wp_enqueue_script( 'customjs', get_stylesheet_directory_uri() . '/js/custom.js' );

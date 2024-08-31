@@ -178,7 +178,7 @@ scroll-behavior: smooth !important;
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="section-title text-center wow animated fadeInUp" data-wow-delay="800ms">Floor <span>Plan</span></h2>
+                <h2 class="section-title text-center wow animated fadeInUp" data-wow-delay="800ms">Floor <span>Plans</span></h2>
             </div>
         </div>
         <div class="row">

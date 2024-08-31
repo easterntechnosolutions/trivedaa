@@ -69,7 +69,6 @@ jQuery(document).ready(function($) {
             navbarbottom.removeClass("nav-scroll-bottom");
         }
     });
-    
     // close navbar-collapse when a  clicked
     $(".navbar-nav .dropdown-item a").on('click', function () {
         $(".navbar-collapse").removeClass("show");
