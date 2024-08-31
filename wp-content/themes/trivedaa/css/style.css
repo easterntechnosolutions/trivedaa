@@ -57,7 +57,7 @@ img {
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
-    color: #323232;
+    color: #1B2633;
 }
 span,
 a,
@@ -83,6 +83,7 @@ input[type="email"]:focus,
 input[type="text"]:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
+input[type="tel"]:focus,
 input[type="checkbox"]:focus,
 textarea:focus {
     outline: none;
@@ -91,6 +92,7 @@ input[type="password"],
 input[type="email"],
 input[type="text"],
 input[type="file"],
+input[type="tel"],
 textarea {
     max-width: 100%;
     margin-bottom: 10px;
@@ -109,7 +111,7 @@ textarea {
     font-weight: 400;
     color: #999;
     background-image: none;
-    border-bottom: 1px solid #323232;
+    border-bottom: 1px solid #1B2633;
     border-color: ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 input:focus,
@@ -134,7 +136,7 @@ input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
 button:hover {
-    background-color: #323232;
+    background-color: #1B2633;
     color: #fff;
     border: 1px solid transparent;
 }
@@ -203,7 +205,7 @@ blockquote {
     padding: 45px;
     display: block;
     position: relative;
-    background-color: #323232;
+    background-color: #1B2633;
     overflow: hidden;
     margin: 35px 0;
     font-size: 16px;
@@ -546,7 +548,7 @@ blockquote cite:before {
     -webkit-transform: translateY(-100px);
     transform: translateY(-100px);
     border: none;
-    border-bottom: 1px solid #323232;    
+    border-bottom: 1px solid #1B2633;    
     z-index: 10;
 }
 .nav-scroll {
@@ -563,7 +565,7 @@ blockquote cite:before {
     -webkit-transform: translateY(100px);
     transform: translateY(100px);
     border: none;
-    border-bottom: 1px solid #323232;
+    border-bottom: 1px solid #1B2633;
     height: 80px;
 }
 .nav-scroll .navbar-toggler-icon,
@@ -581,7 +583,7 @@ blockquote cite:before {
     color: #fff;
 }
 .nav-scroll .logo-img {
-    width: 115px;
+    width: 250px;
 }
 .nav-scroll .logo-img {
     margin-bottom: 0px;
@@ -1318,8 +1320,8 @@ hr {
     right: 0;
     left: 0;
     content: "";
-    background: -webkit-linear-gradient(to top, rgba(12, 12, 12, 1) 0%, rgba(12, 12, 12, 0) 40%, rgba(12, 12, 12, 0) 60%);
-    background: linear-gradient(to top, rgba(12, 12, 12, 1) 0%, rgba(12, 12, 12, 0) 40%, rgba(12, 12, 12, 0) 60%);
+    background: -webkit-linear-gradient(to top, rgba(11, 22, 35, 1) 0%, rgba(11, 22, 35, 0) 40%, rgba(11, 22, 35, 0) 60%);
+    background: linear-gradient(to top, rgba(11, 22, 35, 1) 0%, rgba(11, 22, 35, 0) 40%, rgba(11, 22, 35, 0) 60%);
     object-fit: cover;
 }
 
@@ -1342,17 +1344,17 @@ hr {
     margin-left: -570px;
     top: 0;
     height: 100%;
-    border-left: 1px solid #323232;
-    border-right: 1px solid #323232;
-    border-bottom: 1px solid #323232;
+    border-left: 1px solid #1B2633;
+    border-right: 1px solid #1B2633;
+    border-bottom: 1px solid #1B2633;
 }
 .content-lines {
     position: absolute;
     left: 33.666666%;
     right: 33.666666%;
     height: 100%;
-    border-left: 1px solid #323232;
-    border-right: 1px solid #323232;
+    border-left: 1px solid #1B2633;
+    border-right: 1px solid #1B2633;
 }
 
 
@@ -1452,7 +1454,7 @@ hr {
     left: 0;
     right: 45px;
     bottom: 0;
-    /* border: 1px solid #323232; */
+    /* border: 1px solid #1B2633; */
 }
 .about .about-img .img img {
     position: relative;
@@ -1480,7 +1482,7 @@ hr {
 }
 
 .about-buro {
-    background: #323232;
+    background: #1B2633;
 }
 
 
@@ -1518,7 +1520,7 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #323232;
+    background-color: #1B2633;
     -webkit-transition: all .4s;
     transition: all .4s;
 }
@@ -1545,7 +1547,7 @@ hr {
     text-transform: uppercase;
 }
 .team-details .content {
-    background-color: #323232;
+    background-color: #1B2633;
 }
 .team-details .text-content {
     position: relative;
@@ -1655,8 +1657,8 @@ hr {
     padding: 40px 45px 40px 50px;
     -webkit-transition: background-color .3s;
     transition: background-color .3s;
-    border-top: 1px solid #323232;
-    border-bottom: 1px solid #323232;
+    border-top: 1px solid #1B2633;
+    border-bottom: 1px solid #1B2633;
     background-color: transparent;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
@@ -1798,7 +1800,7 @@ hr {
     position: relative;
 }
 .services .item:hover {
-    background: #323232;
+    background: #1B2633;
 }
 .services .item:hover .numb {
     color: transparent;
@@ -1871,7 +1873,7 @@ hr {
     right: 40px;
     bottom: 0;
     z-index: 2;
-    background-color: #323232;
+    background-color: #1B2633;
     padding: 20px 0;
     opacity: 1;
     visibility: visible;
@@ -1982,15 +1984,15 @@ hr {
     margin-bottom: 30px;
     padding: 40px;
     padding-bottom: 0;
-    background: #323232;
-    border-bottom: 1px solid #323232;
+    background: #1B2633;
+    border-bottom: 1px solid #1B2633;
     transition: .2s;
     overflow: hidden;
     cursor: pointer;
     z-index: 3
 }
 .services3:hover {
-    background: #323232;
+    background: #1B2633;
     z-index: 100;
     border-bottom: 1px solid #537EB9;
 
@@ -2116,7 +2118,7 @@ hr {
     transform-style: preserve-3d;
 }
 .services4 .square2 {
-    background: #323232;
+    background: #1B2633;
     background-size: cover;
     background-position: center center;
     -webkit-transition: -webkit-transform 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.25);
@@ -2257,7 +2259,7 @@ hr {
     position: relative;
     display: block;
     padding: 45px;
-    background: #323232;
+    background: #1B2633;
     border-radius: 0px;
 }
 .sidebar-title {
@@ -2459,7 +2461,7 @@ hr {
 .projects-prev-next {
   padding: 40px 0;
   border: none;
-  border-top: 1px solid #323232;
+  border-top: 1px solid #1B2633;
  position: relative;
 }
 @media (max-width: 576px) {
@@ -2995,7 +2997,7 @@ hr {
 }
 .project-bar {
     padding: 30px 45px 30px 45px;
-    background-color: #323232;
+    background-color: #1B2633;
     margin-top: -55px;
     margin-bottom: 30px;
     position: relative;
@@ -3034,7 +3036,7 @@ hr {
     font-size: 13px;
     color: #537EB9;
     background-color: transparent;
-    border: 1px solid #323232;
+    border: 1px solid #1B2633;
     border-radius: 50%;
     padding: 9px;
 }
@@ -3052,7 +3054,7 @@ hr {
 
 /* ======= Clients style ======= */
 .clients {
-    background-color: #323232;
+    background-color: #1B2633;
 }
 .clients .owl-carousel {
     margin: 20px 0;
@@ -3394,8 +3396,8 @@ button.mfp-arrow {
 .bauen-blog .item .con {
     margin: -120px 20px 75px;
     padding: 15px 15px 25px 15px;
-    background-color: #323232 !important;
-    border: 1px solid #323232;
+    background-color: #1B2633 !important;
+    border: 1px solid #1B2633;
     border-radius: 0;
     overflow: hidden;
     -webkit-transition: .2s cubic-bezier(.3, .58, .55, 1);
@@ -3639,7 +3641,7 @@ button.mfp-arrow {
 }
 /* blog sidebar */
 .blog-sidebar .widget {
-    background: #323232;
+    background: #1B2633;
     padding: 30px;
     margin-bottom: 30px;
     overflow: hidden;
@@ -3757,7 +3759,7 @@ button.mfp-arrow {
     text-align: center;
     color: #999;
     font-weight: 300;
-    border: 1px solid #323232;
+    border: 1px solid #1B2633;
      font-family: "Bebas Neue", sans-serif;
     font-size: 13px;
     border-radius: 100%;
@@ -3810,7 +3812,7 @@ button.mfp-arrow {
     transform: scale(0.95);
 }
 .bauen-blog4 .caption {
-    background: #323232;
+    background: #1B2633;
     position: absolute;
     left: 0;
     top: 50%;
@@ -3823,7 +3825,7 @@ button.mfp-arrow {
 .bauen-blog4.left .caption {
     left: auto;
     right: 0;
-    background: #323232;
+    background: #1B2633;
     padding: 4%;
 }
 .bauen-blog4 .caption h4,
@@ -3900,7 +3902,7 @@ hr {
     border: 0;
 }
 hr.border-1 {
-    border-top: 1px solid #323232;
+    border-top: 1px solid #1B2633;
 }
 hr.border-2 {
     border-top: 1px solid #525252;
@@ -4020,7 +4022,7 @@ hr.border-2 {
     bottom: 0;
     left: 100%;
     z-index: 1;
-    background: #323232;
+    background: #1B2633;
     color: #fff;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -4325,7 +4327,7 @@ hr.border-2 {
     line-height: 40px;
     font-size: 12px;
     font-weight: 700;
-    color: #323232;
+    color: #1B2633;
     left: 0;
     top: 0;
     height: 40px;
@@ -4367,13 +4369,13 @@ hr.border-2 {
 }
 .accordion-box .block {
   position: relative;
-  background: #323232;
+  background: #1B2633;
   border-radius: 0px;
   overflow: hidden;
   margin-bottom: 16px;
 }
 .accordion-box .block.active-block {
-  background-color: #323232;
+  background-color: #1B2633;
 }
 .accordion-box .block:last-child {
   margin-bottom: 0;
@@ -4409,7 +4411,7 @@ hr.border-2 {
     transition: all 500ms ease;
 }
 .accordion-box .block .acc-btn.active {
-  background-color: #323232;
+  background-color: #1B2633;
     color: #537EB9;
 }
 .accordion-box .block .acc-btn.active:before {
@@ -4423,7 +4425,7 @@ hr.border-2 {
 .accordion-box .block .content {
   position: relative;
     padding: 0px 40px 30px;
-    background-color: #323232;
+    background-color: #1B2633;
     color: #999;
 }
 .accordion-box .block .acc-content.current {
@@ -4439,7 +4441,7 @@ hr.border-2 {
 
 /* ======= Pricing plan style ======= */
 .pricing-card {
-    background-color: #323232;
+    background-color: #1B2633;
     padding: 60px 40px 40px 40px;
     border-radius: 0;
     margin-bottom: 30px;
@@ -4567,19 +4569,19 @@ hr.border-2 {
   display: block;
    font-family: "Nunito", sans-serif;
   font-size: 16px;
-  background: #323232;
+  background: #1B2633;
   color: #999;
   border-radius: 7px;
-  border: 1px solid #323232;
+  border: 1px solid #1B2633;
   transition: all 300ms ease;
 }
 .error-form .form-group input[type="text"]:focus,
 .error-form .form-group input[type="email"]:focus,
 .error-form .form-group input[type="search"]:focus {
-  border-color: #323232;
+  border-color: #1B2633;
 }
 .error-form .form-group input::-webkit-input-placeholder {
-  color: #323232;
+  color: #1B2633;
 }
 .error-form .form-group .theme-btn {
       position: absolute;
@@ -4621,8 +4623,8 @@ hr.border-2 {
 }
 .process .item .cont {
   padding: 40px 20px;
-  background-color: #323232;
-  border: 1px solid #323232;
+  background-color: #1B2633;
+  border: 1px solid #1B2633;
   border-radius: 10px;
   position: relative;
   z-index: 3;
@@ -4711,7 +4713,7 @@ hr.border-2 {
 
 /* ======= Process 2 style ======= */
 .process2.item{
-    background-color: #323232;
+    background-color: #1B2633;
     padding: 30px 20px;
     position: relative;
     text-align: left;
@@ -4728,7 +4730,7 @@ hr.border-2 {
     width: 40px;
     border-radius: 50%;
     background-color: transparent;
-    border: 1px solid #323232;
+    border: 1px solid #1B2633;
     line-height: 39px;
     text-align: center;
     left: 22px;
@@ -4763,7 +4765,7 @@ hr.border-2 {
     position: absolute;
     pointer-events: none;
     border-color: transparent;
-    border-top-color: #323232;
+    border-top-color: #1B2633;
     border-width: 16px;
     left: 25px;
 }
@@ -4777,7 +4779,7 @@ hr.border-2 {
     position: absolute;
     pointer-events: none;
     border-color: transparent;
-    border-bottom-color: #323232;
+    border-bottom-color: #1B2633;
     border-width: 16px;
     left: 25px;
 }
@@ -4911,7 +4913,7 @@ hr.border-2 {
     outline: none;
 }
 .comming form button:hover {
-  background-color: #323232;
+  background-color: #1B2633;
   color: #fff;
 	outline: none;
 }
@@ -5303,7 +5305,7 @@ hr.border-2 {
     margin-bottom: 80px;
 }
 .footer-logo img{
-    width: 400px;
+    width: 350px;
 }
 
 .project-section-1{

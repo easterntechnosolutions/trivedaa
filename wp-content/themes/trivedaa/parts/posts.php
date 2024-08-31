@@ -1,6 +1,5 @@
 <?php   
 	get_header();
-	get_template_part('parts/page-title');
 	
 // Get categories of the custom taxonomy 'ourmediatype'
 $categories = get_terms(array(
@@ -12,7 +11,17 @@ $categories = get_terms(array(
 ?>
 
 <!-- blog-classic -->
-<section class="bauen-blog3 section-padding2">
+<div class="content-wrapper">
+    <section class="content-lines-wrapper">
+        <div class="lines">
+            <div class="animatedLine"></div>
+            <div class="animatedLine"></div>
+            <div class="animatedLine"></div>
+            <div class="animatedLine"></div>
+        </div>
+    </section>
+    <?php get_template_part('parts/page-title');?>
+<section class="bauen-blog3 section-padding">
     <div class="container">
 		<div class="row">
 		<div class="col-md-8">
@@ -127,5 +136,5 @@ $categories = get_terms(array(
         	</div>
     	</div>
 	</section>
-
-<?php get_footer(); ?>
+</div>
+	<?php get_footer(); ?>

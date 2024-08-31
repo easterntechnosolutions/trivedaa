@@ -30,12 +30,12 @@ get_header();
             </div>
             <div class="row">
                 <div class="col-md-8">
-                    <div style="background-color:#323232;padding:30px;">
+                    <div style="background-color:#1B2633;padding:30px;">
                         <?php  echo do_shortcode('[contact-form-7 id="bb86e30" title="Contact form 1"]');?>
                     </div>
                 </div>
                 <div class="col-md-4 get-in-touch">
-                    <div style="background-color:#323232;padding:30px;">
+                    <div style="background-color:#1B2633;padding:30px;">
                         <div class="mb-30 animate-box" data-animate-effect="fadeInUp">
                             <h2><b>Get In Touch</b></h2>
                         </div>
